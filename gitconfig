@@ -14,8 +14,6 @@
 
 [core]
 	excludesfile = /home/bgraham/.gitignore
-[push]
-	default = simple
 
 [include]
   path = ~/.gitconfig.local
