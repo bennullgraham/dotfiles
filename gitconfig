@@ -1,6 +1,4 @@
-[user]
-	name = Ben Graham
-	email = bgraham@bgraham.com.au
+# vim: set filetype=gitconfig : 
 
 [color]
 	ui = auto
@@ -18,3 +16,6 @@
 	excludesfile = /home/bgraham/.gitignore
 [push]
 	default = simple
+
+[include]
+  path = ~/.gitconfig.local
