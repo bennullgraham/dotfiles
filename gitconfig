@@ -1,0 +1,20 @@
+[user]
+	name = Ben Graham
+	email = bgraham@bgraham.com.au
+
+[color]
+	ui = auto
+	diff = auto
+
+[alias]
+	st = status
+	ci = commit
+    co = checkout
+    re = rebase
+	gr = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%h%x09 %Cblue%ad %Cgreen%d %Creset%s\"
+    pr = pull --rebase
+
+[core]
+	excludesfile = /home/bgraham/.gitignore
+[push]
+	default = simple

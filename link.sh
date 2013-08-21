@@ -3,7 +3,7 @@
 src="$HOME/.dotfiles"
 dest="$HOME"
 
-links="vimrc vim"
+links="vimrc vim gitconfig gitignore"
 
 # Before trying to make any links, do a sanity-check
 for link in $links; do
