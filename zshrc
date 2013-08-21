@@ -97,4 +97,6 @@ alias music='ncmpcpp'
 bindkey "^Q" push-input
 
 # allow local configs too
-source $HOME/.zshrc.local
+if [ -e $HOME/.zshrc.local ]; then
+    source $HOME/.zshrc.local
+fi
