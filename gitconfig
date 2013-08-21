@@ -10,13 +10,22 @@
 [alias]
     st = status
     ci = commit
+    gr = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%h%x09 %Cblue%ad %Cgreen%d %Creset%s\"
     co = checkout
     re = rebase
-    gr = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%h%x09 %Cblue%ad %Cgreen%d %Creset%s\"
     pr = pull --rebase
+    pa = !git pull --rebase && git submodule foreach git pull --rebase
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    lg = log --abbrev-commit --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %s %C(blue)%an%Creset %Cgreen(%cr)%Creset' --graph --decorate
+    ds = diff --staged
+    dv = !git diff | view -
+    dvs = !git diff --staged | view -
+    dw = diff --word-diff=color
+    dws = diff --staged --word-diff=color
 
 [core]
-    excludesfile = /home/bgraham/.gitignore
+    excludesfile = ~/.gitignore
 
 [include]
     path = ~/.gitconfig.local

@@ -10,3 +10,6 @@ set expandtab
 
 set modeline
 set modelines=5
+
+au FileType gitcommit set tw=72
+au FileType gitcommit colorscheme elflord
