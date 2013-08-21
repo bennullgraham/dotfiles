@@ -95,3 +95,6 @@ alias music='ncmpcpp'
 
 # bump command and show an empty PS1; bring old command back after executing
 bindkey "^Q" push-input
+
+# allow local configs too
+source $HOME/.zshrc.local
