@@ -26,7 +26,8 @@ P_PATH="%{$FG[000]$BG[015]%}%~"
 P_VCS=""
 # primary prompt
 
-PROMPT='$P_HOST${vcs_info_msg_0_} \
+PROMPT='
+$P_HOST${vcs_info_msg_0_} \
 %{$FG[105]%}%(!.#.»)%{$reset_color%} '
 PROMPT2='%{$fg[red]%}>>> %{$reset_color%}'
 
