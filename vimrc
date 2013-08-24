@@ -20,3 +20,6 @@ au FileType gitcommit colorscheme elflord
 
 " NeoBundle configs
 so ~/.vim/neobundle
+
+" Statusline
+set laststatus=2
