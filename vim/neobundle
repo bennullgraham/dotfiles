@@ -1,0 +1,31 @@
+" vim: set filetype=vim :
+
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage itself
+NeoBundleFetch 'Shougo/neobundle.vim'
+" NeoBundle 'Shougo/vimproc'
+
+" Bundles here:
+" -------------------------------------
+NeoBundle 'bling/vim-airline'
+NeoBundle 'kien/ctrlp.vim'
+
+" -------------------------------------
+
+" (Apparently) required
+filetype plugin indent on
+
+NeoBundleCheck
+
+" -------------------------------------
+" Configs
+" -------------------------------------
+" let g:airline_left_sep = '▶'
+" let g:airline_right_sep = '◀'
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
