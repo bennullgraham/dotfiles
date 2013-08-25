@@ -6,9 +6,10 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-" Let NeoBundle manage itself
-NeoBundleFetch 'Shougo/neobundle.vim'
-" NeoBundle 'Shougo/vimproc'
+" We'll try neobundle as a sobmodule for the moment, so
+" this is commented out
+"NeoBundleFetch 'Shougo/neobundle.vim'
+"NeoBundle 'Shougo/vimproc'
 
 " Bundles here:
 " -------------------------------------
@@ -17,7 +18,6 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
-
 " -------------------------------------
 
 " (Apparently) required

@@ -1,3 +1,7 @@
 [submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
+    path = oh-my-zsh
+    url = https://github.com/robbyrussell/oh-my-zsh.git
+
+[submodule "neobundle"]
+	path = vim/bundle/neobundle.vim
+	url = https://github.com/Shougo/neobundle.vim.git
