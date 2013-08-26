@@ -18,6 +18,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'zhaocai/GoldenView.Vim'
 " -------------------------------------
 
 " (Apparently) required
