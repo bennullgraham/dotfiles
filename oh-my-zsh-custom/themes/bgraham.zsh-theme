@@ -14,7 +14,7 @@ zstyle ':vcs_info:*' actionformats \
 zstyle ':vcs_info:*' formats       \
     "%{$FG[036]%}(%c%u%{$FG[031]%}%b%{$FG[036]%})"
 function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo "%{$FG[242]$BG[235]%} `basename $VIRTUAL_ENV` "
+    [ $VIRTUAL_ENV ] && echo "%{$FG[242]$BG[235]%} `basename $VIRTUAL_ENV` %{$reset_color%} "
 }
 
 function precmd {
@@ -22,7 +22,7 @@ function precmd {
 }
 
 P_HOST="%{$bold_color$FG[036]%}%m%{$reset_color%}"
-P_PATH="%{$FG[000]$BG[015]%}%~"
+P_PATH="%{$FG[237]%}%~"
 P_VCS=""
 # primary prompt
 
@@ -32,7 +32,7 @@ $P_HOST${vcs_info_msg_0_} \
 PROMPT2='%{$fg[red]%}>>> %{$reset_color%}'
 
 # right prompt
-RPROMPT='$P_PATH$(virtualenv_info)%{$reset_color%} %T'
+RPROMPT='$P_PATH $(virtualenv_info)%{$FG[240]%}%T%{$reset_color%}'
 
 # git settings
 ZSH_THEME_GIT_PROMPT_PREFIX="$FG[075](branch:"
