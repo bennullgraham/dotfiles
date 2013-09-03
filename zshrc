@@ -91,8 +91,6 @@ if command -v pygmentize &>/dev/null; then
     alias c='pygmentize -O style=monokai -f console256 -g'
 fi
 
-alias music='ncmpcpp'
-
 # bump command and show an empty PS1; bring old command back after executing
 bindkey "^Q" push-input
 
