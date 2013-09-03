@@ -22,7 +22,7 @@ function precmd {
 }
 
 P_HOST="%{$bold_color$FG[036]%}%m%{$reset_color%}"
-P_PATH="%{$FG[237]%}%~"
+P_PATH="%{$FG[240]%}%~"
 P_VCS=""
 # primary prompt
 
@@ -32,7 +32,7 @@ $P_HOST${vcs_info_msg_0_} \
 PROMPT2='%{$fg[red]%}>>> %{$reset_color%}'
 
 # right prompt
-RPROMPT='$P_PATH $(virtualenv_info)%{$FG[240]%}%T%{$reset_color%}'
+RPROMPT='$P_PATH $(virtualenv_info)%{$FG[245]%}%T%{$reset_color%}'
 
 # git settings
 ZSH_THEME_GIT_PROMPT_PREFIX="$FG[075](branch:"
