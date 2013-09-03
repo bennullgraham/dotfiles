@@ -98,3 +98,9 @@ bindkey "^Q" push-input
 if [ -e $HOME/.zshrc.local ]; then
     source $HOME/.zshrc.local
 fi
+
+# use 'cdp' as shortcut for cding with fasd
+function cdp() {
+    local dir=`fasd -ld "$1" | tail -n1`
+    cd "$dir"
+}
