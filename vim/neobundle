@@ -6,11 +6,6 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-" We'll try neobundle as a sobmodule for the moment, so
-" this is commented out
-"NeoBundleFetch 'Shougo/neobundle.vim'
-"NeoBundle 'Shougo/vimproc'
-
 " Bundles here:
 " -------------------------------------
 NeoBundle 'bling/vim-airline'
@@ -18,7 +13,6 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'zhaocai/GoldenView.Vim'
 " -------------------------------------
 
 " (Apparently) required
@@ -29,8 +23,6 @@ NeoBundleCheck
 " -------------------------------------
 " Configs
 " -------------------------------------
-" let g:airline_left_sep = '▶'
-" let g:airline_right_sep = '◀'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_theme = 'powerlineish'
