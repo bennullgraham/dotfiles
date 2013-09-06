@@ -13,6 +13,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'Shougo/neocomplcache.vim'
 " -------------------------------------
 
 " (Apparently) required
@@ -26,3 +27,22 @@ NeoBundleCheck
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_theme = 'powerlineish'
+
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+
+" complete and close on tab
+inoremap <expr><TAB>  pumvisible() ? "\<C-n><C-y>" : "\<TAB>"
+
+" enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" don't trap cursor arrowing in insert mode
+inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
+inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
+inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
+inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
