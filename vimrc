@@ -23,3 +23,8 @@ so ~/.vim/neobundle
 
 " Statusline
 set laststatus=2
+
+set incsearch  " highlight while searching
+set hlsearch   " highlight all matches; :noh to clear
+set ignorecase " searches are case insensitive,
+set smartcase  " unless there's at least one uppercase
