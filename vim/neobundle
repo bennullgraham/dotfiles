@@ -19,6 +19,7 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/neocomplcache.vim'
@@ -59,8 +60,8 @@ inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
 " unite.vim
 " http://www.codeography.com/2013/06/17/replacing-all-the-things-with-unite-vim.html
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <C-p> :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
-nnoremap <C-b> :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
+nnoremap <C-p> :<C-u>Unite -no-split -buffer-name=files  -start-insert file_rec/async<cr>
+nnoremap <C-b> :<C-u>Unite -no-split -buffer-name=buffer -start-insert buffer<cr>
 nnoremap <C-g> :<C-u>Unite grep:.<cr>
 " Use ag for search
 if executable('ag')
