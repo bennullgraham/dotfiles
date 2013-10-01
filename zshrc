@@ -86,6 +86,8 @@ if command -v fasd &>/dev/null; then
     eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-wcomp zsh-ccomp-install zsh-wcomp-install)"
 fi
 
+alias t='task'
+
 # syntax-highlighted cat, if pygmentize is around
 if command -v pygmentize &>/dev/null; then
     alias c='pygmentize -O style=monokai -f console256 -g'
