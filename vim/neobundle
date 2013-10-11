@@ -25,6 +25,9 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'gcmt/taboo.vim'
+NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'Raimondi/delimitMate'
 " -------------------------------------
 
 " (Apparently) required
