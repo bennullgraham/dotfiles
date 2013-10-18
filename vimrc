@@ -1,7 +1,7 @@
 " Theme
 set t_Co=256
 set bg=dark
-colorscheme molokai256
+colorscheme luna-term
 syntax enable
 
 " Tabbing
