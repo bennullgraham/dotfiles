@@ -62,5 +62,10 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 
-" jk to leave insert mode 
+" jk to leave insert mode
 inoremap jk <esc>
+
+" Unite mappings
+nmap <Leader>b :<C-U>Unite -no-split -buffer-name=buffer -start-insert buffer<CR>
+nmap <Leader>p :<C-u>Unite -no-split -buffer-name=files  -start-insert file_rec/async<cr>
+nmap <Leader>g :<C-u>Unite grep:.<cr>
