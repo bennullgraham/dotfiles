@@ -69,3 +69,29 @@ inoremap jk <esc>
 nmap <Leader>b :<C-U>Unite -no-split -buffer-name=buffer -start-insert buffer<CR>
 nmap <Leader>p :<C-u>Unite -no-split -buffer-name=files  -start-insert file_rec/async<cr>
 nmap <Leader>g :<C-u>Unite grep:.<cr>
+
+" If a tab-local working directory is defined, cd to it
+" Usage: :let t:wd = "some/directory"
+au TabEnter * if exists("t:wd") | exe "cd" t:wd | endif
+
+" read buffers when they change on disk
+set autoread
+
+" hjkl split navigation
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc so $MYVIMRC
+augroup END
+
+" docstring insertion, works around delimitmate going berserk on python
+" triple-quote strings.
+nmap <leader>d o"""jko"""jkO
+
+" next and previous errors
+nmap <leader>e :lne<cr>
+nmap <leader>E :lp<cr>
