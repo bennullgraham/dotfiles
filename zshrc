@@ -67,6 +67,7 @@ source /usr/local/bin/virtualenvwrapper_lazy.sh
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 export EDITOR='vim'
+export PAGER='less -S'  # don't wrap
 
 # initialise fasd if it's around
 if command -v fasd &>/dev/null; then
