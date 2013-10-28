@@ -16,18 +16,19 @@ NeoBundle 'Shougo/vimproc', {
       \     'unix'    : 'make -f make_unix.mak',
       \    },
       \ }
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'evanmiller/nginx-vim-syntax'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'gcmt/taboo.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'evanmiller/nginx-vim-syntax'
+NeoBundle 'gcmt/taboo.vim'
 NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'Shougo/neocomplcache.vim'
+NeoBundle 'Shougo/unite-outline'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-surround'
 " -------------------------------------
 
 " (Apparently) required

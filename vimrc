@@ -66,9 +66,10 @@ augroup END
 inoremap jk <esc>
 
 " Unite mappings
-nmap <Leader>b :<C-U>Unite -no-split -buffer-name=buffer -start-insert buffer<CR>
+nmap <Leader>b :<C-u>Unite -no-split -buffer-name=buffer -start-insert buffer<cr>
 nmap <Leader>p :<C-u>Unite -no-split -buffer-name=files  -start-insert file_rec/async<cr>
 nmap <Leader>g :<C-u>Unite grep:.<cr>
+nmap <Leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert -auto-preview outline<cr>
 
 " If a tab-local working directory is defined, cd to it
 " Usage: :let t:wd = "some/directory"
@@ -95,3 +96,13 @@ nmap <leader>d o"""jko"""jkO
 " next and previous errors
 nmap <leader>e :lne<cr>
 nmap <leader>E :lp<cr>
+
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
+nmap <leader>ds :DiffSaved<cr>
