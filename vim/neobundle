@@ -29,6 +29,8 @@ NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
+NeoBundle "pangloss/vim-javascript"
+NeoBundle "tsukkee/unite-tag"
 " -------------------------------------
 
 " (Apparently) required
@@ -72,3 +74,7 @@ endif
 " syntastic
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_javascript_checkers=['jshint']
+
+" nerd commenter
+" pad comment chars with spaces OCD nhhrrrnnngh
+let g:NERDSpaceDelims=1

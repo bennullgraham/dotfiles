@@ -33,7 +33,8 @@ set nohlsearch " consider switching this on for '*' only
 set ignorecase " searches are case insensitive,
 set smartcase  " unless there's at least one uppercase
 
-" Show line-numbers
+" Enable hybrid line numbering by enabling both types of numbering
+set relativenumber
 set number
 
 " Lower, righter splits get focus after split
@@ -69,7 +70,8 @@ inoremap jk <esc>
 nmap <Leader>b :<C-u>Unite -no-split -buffer-name=buffer -start-insert buffer<cr>
 nmap <Leader>p :<C-u>Unite -no-split -buffer-name=files  -start-insert file_rec/async<cr>
 nmap <Leader>g :<C-u>Unite grep:.<cr>
-nmap <Leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert -auto-preview outline<cr>
+nmap <Leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+nmap <Leader>t :<C-u>Unite -no-split -buffer-name=tags -start-insert tag<cr>
 
 " If a tab-local working directory is defined, cd to it
 " Usage: :let t:wd = "some/directory"
@@ -106,3 +108,8 @@ function! s:DiffWithSaved()
 endfunction
 com! DiffSaved call s:DiffWithSaved()
 nmap <leader>ds :DiffSaved<cr>
+
+
+" snippets... sorta
+nmap <leader>si oimport ipdb; ipdb.set_trace()<esc>
+nmap <leader>Si Oimport ipdb; ipdb.set_trace()<esc>
