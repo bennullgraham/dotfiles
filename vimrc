@@ -70,12 +70,16 @@ inoremap jk <esc>
 nmap <Leader>b :<C-u>Unite -no-split -buffer-name=buffer -start-insert buffer<cr>
 nmap <Leader>p :<C-u>Unite -no-split -buffer-name=files  -start-insert file_rec/async<cr>
 nmap <Leader>g :<C-u>Unite grep:.<cr>
-nmap <Leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
-nmap <Leader>t :<C-u>Unite -no-split -buffer-name=tags -start-insert tag<cr>
+nmap <Leader>o :<C-u>Unite -no-split -buffer-name=outline outline<cr>
+nmap <Leader>c :<C-u>Unite -no-split -buffer-name=tags -start-insert tag<cr>
+nmap <Leader>t :<C-u>Unite tab<cr>
 
 " If a tab-local working directory is defined, cd to it
 " Usage: :let t:wd = "some/directory"
 au TabEnter * if exists("t:wd") | exe "cd" t:wd | endif
+
+" Don't show the tab bar (I use Unite to switch tabs)
+set showtabline=0
 
 " read buffers when they change on disk
 set autoread
