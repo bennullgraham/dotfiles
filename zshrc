@@ -24,6 +24,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/bgraham/bin:/home/bgraham/.local/bin
 
 setopt histignorealldups sharehistory
+unsetopt correctall
+setopt autocd correct
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
@@ -103,3 +105,8 @@ if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]; then
     ln -sf $SSH_AUTH_SOCK $SOCK
     export SSH_AUTH_SOCK=$SOCK
 fi
+
+# ^xe to open command in $EDITOR
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
