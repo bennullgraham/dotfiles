@@ -63,8 +63,9 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 
-" jk to leave insert mode
+" jk to leave insert and visual modes
 inoremap jk <esc>
+vnoremap jk <esc>
 
 " Unite mappings
 nmap <Leader>b :<C-u>Unite -no-split -buffer-name=buffer -start-insert buffer<cr>
@@ -73,6 +74,9 @@ nmap <Leader>g :<C-u>Unite grep:.<cr>
 nmap <Leader>o :<C-u>Unite -no-split -buffer-name=outline outline<cr>
 nmap <Leader>c :<C-u>Unite -no-split -buffer-name=tags -start-insert tag<cr>
 nmap <Leader>t :<C-u>Unite tab<cr>
+
+" order python imports. kinda fragile.
+nmap <Leader>io gg<S-v>}k:sort<cr><C-o><C-o>
 
 " If a tab-local working directory is defined, cd to it
 " Usage: :let t:wd = "some/directory"
