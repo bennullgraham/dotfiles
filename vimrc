@@ -4,6 +4,11 @@ set bg=dark
 colorscheme luna-term-mod
 syntax enable
 
+" Performance
+set ttyfast
+set synmaxcol=256
+syntax sync minlines=256
+
 " Tabbing
 set smartindent
 set tabstop=4
