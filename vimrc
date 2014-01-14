@@ -11,6 +11,11 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 
+" Keep swap and backup files in a central place. The trailing double slash
+" enables a no-collision file naming scheme.
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+
 " Check for modelines
 set modeline
 set modelines=5
