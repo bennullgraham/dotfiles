@@ -73,7 +73,7 @@ highlight clear
 if exists("syntax_on")
     syntax reset
 endif
-let g:colors_name = "luna-term"
+let g:colors_name = "luna-term-mod"
 " }}}
 "
 " Console vim Highlighting: (see :help highlight-groups)"{{{
