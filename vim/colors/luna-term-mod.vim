@@ -163,6 +163,10 @@ hi pythonDot                ctermfg=161 ctermbg=NONE cterm=NONE
 hi pythonParameters         ctermfg=149 ctermbg=NONE cterm=NONE
 hi pythonClassParameters    ctermfg=149 ctermbg=NONE cterm=NONE
 hi pythonClass              ctermfg=37  ctermbg=NONE cterm=NONE
+hi pythonInclude            ctermfg=149 ctermbg=NONE cterm=NONE
+hi pythonBrackets           ctermfg=148 ctermbg=NONE cterm=NONE
+hi pythonOperator           ctermfg=200 ctermbg=NONE cterm=NONE
+
 "
 " ---------------------------------------------------------------------
 "  Ruby Specifics
