@@ -78,7 +78,7 @@ inoremap jk <esc>
 vnoremap jk <esc>
 
 " Unite mappings
-nmap <Leader>b :<C-u>Unite -no-split -buffer-name=buffer -start-insert buffer<cr>
+nmap <Leader>b :<C-u>Unite -no-split -buffer-name=buffer buffer<cr>
 nmap <Leader>p :<C-u>Unite -no-split -buffer-name=files  -start-insert file_rec/async<cr>
 nmap <Leader>g :<C-u>Unite grep:.<cr>
 nmap <Leader>o :<C-u>Unite -no-split -buffer-name=outline outline<cr>
@@ -134,3 +134,8 @@ nmap <leader>Si Oimport ipdb; ipdb.set_trace()<esc>
 
 " remap ex-mode to execute macro in q
 nmap Q @q
+
+" reveal highlight group under cursor
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
