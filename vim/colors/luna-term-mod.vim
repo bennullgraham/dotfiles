@@ -152,6 +152,9 @@ hi SignColumn   ctermfg=NONE ctermbg=0    cterm=NONE
 "
 " }}}
 "
+" bg - git gutter column like line number column
+highlight clear SignColumn
+
 " Language Specifics: {{{
 " ---------------------------------------------------------------------
 " These are language specifics. These are set explicitly to override the group
@@ -162,14 +165,15 @@ hi SignColumn   ctermfg=NONE ctermbg=0    cterm=NONE
 hi pythonDot                ctermfg=161 ctermbg=NONE cterm=NONE
 hi pythonParameters         ctermfg=149 ctermbg=NONE cterm=NONE
 hi pythonClassParameters    ctermfg=149 ctermbg=NONE cterm=NONE
-hi pythonClass              ctermfg=37  ctermbg=NONE cterm=NONE
+hi pythonClass              ctermfg=38  ctermbg=NONE cterm=NONE
+hi pythonFunction           ctermfg=149 ctermbg=NONE cterm=NONE
 hi pythonInclude            ctermfg=149 ctermbg=NONE cterm=NONE
-hi pythonStatement          ctermfg=204 ctermbg=NONE cterm=NONE
+hi pythonStatement          ctermfg=38  ctermbg=NONE cterm=NONE
 hi pythonConditional        ctermfg=204 ctermbg=NONE cterm=NONE
 hi pythonException          ctermfg=204 ctermbg=NONE cterm=NONE
 hi pythonNumber             ctermfg=37  ctermbg=NONE cterm=NONE
+hi pythonOperator           ctermfg=203 ctermbg=NONE cterm=NONE
 " hi pythonBrackets           ctermfg=148 ctermbg=NONE cterm=NONE
-" hi pythonOperator           ctermfg=200 ctermbg=NONE cterm=NONE
 
 "
 " ---------------------------------------------------------------------
