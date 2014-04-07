@@ -31,6 +31,9 @@ so ~/.vim/neobundle
 " Statusline
 set laststatus=2
 
+" Tab completion - 'wildmenu'
+set wildmenu
+
 " Encoding
 set fenc=utf-8
 
@@ -73,17 +76,17 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 
-" jk to leave insert and visual modes
+" jk to leave insert modes
 inoremap jk <esc>
-vnoremap jk <esc>
 
 " Unite mappings
-nmap <Leader>b :<C-u>Unite -no-split -buffer-name=buffer buffer<cr>
-nmap <Leader>p :<C-u>Unite -no-split -buffer-name=files  -start-insert file_rec/async<cr>
-nmap <Leader>g :<C-u>Unite grep:.<cr>
-nmap <Leader>o :<C-u>Unite -no-split -buffer-name=outline outline<cr>
-nmap <Leader>c :<C-u>Unite -no-split -buffer-name=tags -start-insert tag<cr>
-nmap <Leader>t :<C-u>Unite -no-split -buffer-name=tabs tab<cr>
+nmap <Leader>b :<C-u>Unite -no-split -buffer-name=unite buffer<cr>
+nmap <Leader>p :<C-u>Unite -no-split -buffer-name=unite  -start-insert file_rec/async<cr>
+nmap <Leader>g :<C-u>Unite -no-split -buffer-name=unite grep:.<cr>
+nmap <Leader>o :<C-u>Unite -no-split -buffer-name=unite outline<cr>
+nmap <Leader>c :<C-u>Unite -no-split -buffer-name=unite -start-insert tag<cr>
+nmap <Leader>t :<C-u>Unite -no-split -buffer-name=unite tab<cr>
+nmap <Leader>m :<C-u>Unite -no-split -buffer-name=unite file_rec/async:/home/bgraham/doc/md grep:/home/bgraham/doc/md<cr>
 
 " order python imports. kinda fragile.
 nmap <Leader>io gg<S-v>}k:sort<cr><C-o>
@@ -114,8 +117,11 @@ augroup END
 nmap <leader>d o"""jko"""jkO
 
 " next and previous errors
-nmap <leader>e :lne<cr>
-nmap <leader>E :lp<cr>
+nmap ]e :lne<cr>
+nmap [e :lp<cr>
+" next and previous quicklist
+nmap ]c :cn<cr>
+nmap [c :cp<cr>]
 
 function! s:DiffWithSaved()
   let filetype=&ft
