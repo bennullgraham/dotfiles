@@ -4,70 +4,70 @@ if exists("syntax_on")
 endif
 let g:colors_name = ''
 
-hi Normal             ctermfg=none    ctermbg=0    cterm=none
+hi Normal             ctermfg=254 ctermbg=0    cterm=none
 hi SignColumn         ctermfg=NONE ctermbg=0    cterm=NONE
-hi SpecialKey         term=bold ctermfg=4 guifg=Blue
-hi NonText            term=bold ctermfg=230 ctermbg=60 gui=bold guifg=Blue
-hi Directory          term=bold ctermfg=64 guifg=Blue
-hi ErrorMsg           term=standout ctermfg=16 ctermbg=9 gui=bold guifg=white guibg=#FF6C60
-hi IncSearch          term=reverse ctermfg=255 ctermbg=25 gui=reverse
-hi Search             term=reverse ctermbg=11 guibg=Yellow
-hi MoreMsg            term=bold ctermfg=230 gui=bold guifg=SeaGreen
-hi ModeMsg            term=bold ctermfg=230 gui=bold
-hi LineNr             term=underline cterm=bold ctermfg=8 ctermbg=235 guifg=Brown
-hi CursorLineNr       term=bold ctermfg=3 gui=bold guifg=Brown
-hi Question           term=standout ctermfg=194 gui=bold guifg=SeaGreen
-hi StatusLine         term=bold,reverse cterm=bold ctermfg=15 ctermbg=8 gui=bold,reverse
-hi StatusLineNC       term=reverse ctermfg=7 ctermbg=0 gui=reverse
-hi VertSplit          term=reverse ctermfg=7 ctermbg=0 gui=reverse
-hi Title              term=bold cterm=bold ctermfg=255 ctermbg=60 gui=bold guifg=Magenta
-hi Visual             term=reverse ctermbg=236 guibg=#262D51
-hi WarningMsg         term=standout ctermfg=16 ctermbg=9 gui=bold guifg=white guibg=#FF6C60
-hi WildMenu           term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
-hi Folded             term=standout ctermfg=4 ctermbg=7 guifg=DarkBlue guibg=LightGrey
-hi FoldColumn         term=standout ctermfg=4 ctermbg=7 guifg=DarkBlue guibg=Grey
-hi DiffAdd            term=reverse cterm=bold ctermfg=16 ctermbg=10 guibg=LightBlue
-hi DiffChange         term=reverse cterm=bold ctermfg=16 ctermbg=12 guibg=LightMagenta
-hi DiffDelete         term=reverse cterm=bold ctermfg=16 ctermbg=9 gui=bold guifg=Blue guibg=LightCyan
-hi DiffText           term=reverse cterm=bold ctermfg=16 ctermbg=7 gui=bold guibg=Red
-hi SignColumn         term=standout ctermfg=4 ctermbg=7 guifg=DarkBlue guibg=Grey
-hi Conceal            ctermfg=7 ctermbg=8 guifg=LightGrey guibg=DarkGrey
-hi SpellBad           term=reverse ctermfg=16 ctermbg=160 gui=bold guifg=white guibg=#FF6C60 guisp=Red
-hi SpellCap           term=reverse ctermbg=12 gui=undercurl guisp=Blue
-hi SpellRare          term=reverse ctermbg=13 gui=undercurl guisp=Magenta
-hi SpellLocal         term=underline ctermbg=14 gui=undercurl guisp=DarkCyan
-hi Pmenu              ctermfg=0 ctermbg=13 guibg=LightMagenta
-hi PmenuSel           ctermfg=16 ctermbg=156 guibg=Grey
-hi PmenuSbar          ctermbg=7 guibg=Grey
-hi PmenuThumb         ctermbg=0 guibg=Black
-hi TabLine            term=underline cterm=underline ctermfg=0 ctermbg=7 gui=underline guibg=LightGrey
-hi TabLineSel         term=bold cterm=bold gui=bold
-hi TabLineFill        term=reverse cterm=reverse gui=reverse
-hi CursorColumn       term=reverse ctermbg=7 guibg=Grey90
-hi CursorLine         term=underline cterm=underline ctermbg=234 guibg=#121212
-hi ColorColumn        term=reverse ctermbg=9 guibg=LightRed
-hi MatchParen         term=reverse ctermbg=14 guibg=Cyan
-hi Comment            term=bold ctermfg=8 guifg=Blue
-hi Constant           term=underline cterm=bold ctermfg=255 guifg=Magenta
-hi Special            term=bold cterm=bold ctermfg=153 guifg=SlateBlue
-hi Identifier         term=underline ctermfg=223 guifg=DarkCyan
-hi Statement          term=bold cterm=bold ctermfg=230 gui=bold guifg=Brown
-hi PreProc            term=underline cterm=bold ctermfg=222 guifg=Purple
-hi Type               term=underline cterm=bold ctermfg=193 gui=bold guifg=SeaGreen
-hi Underlined         term=underline cterm=underline ctermfg=5 gui=underline guifg=SlateBlue
-hi Ignore             ctermfg=196 ctermbg=60 guifg=bg
-hi Error              term=reverse ctermfg=16 ctermbg=9 gui=undercurl guisp=#FF6C60
-hi Todo               term=standout ctermfg=0 ctermbg=11 guifg=Blue guibg=Yellow
+hi SpecialKey         term=bold ctermfg=4
+hi NonText            term=bold ctermfg=230 ctermbg=NONE
+hi Directory          term=bold ctermfg=64
+hi ErrorMsg           term=standout ctermfg=16 ctermbg=9
+hi IncSearch          term=reverse ctermfg=255 ctermbg=25
+hi Search             term=reverse ctermbg=11
+hi MoreMsg            term=bold ctermfg=230
+hi ModeMsg            term=bold ctermfg=230
+hi LineNr             term=underline cterm=bold ctermfg=8 ctermbg=235
+hi CursorLineNr       term=bold ctermfg=3
+hi Question           term=standout ctermfg=194
+hi StatusLine         term=bold,reverse cterm=bold ctermfg=15 ctermbg=8
+hi StatusLineNC       term=reverse ctermfg=7 ctermbg=0
+hi VertSplit          term=reverse ctermfg=7 ctermbg=0
+hi Title              term=bold cterm=bold ctermfg=255 ctermbg=60
+hi Visual             term=reverse ctermbg=236
+hi WarningMsg         term=standout ctermfg=16 ctermbg=9
+hi WildMenu           term=standout ctermfg=0 ctermbg=11
+hi Folded             term=standout ctermfg=4 ctermbg=7
+hi FoldColumn         term=standout ctermfg=4 ctermbg=7
+hi DiffAdd            term=reverse cterm=bold ctermfg=16 ctermbg=10
+hi DiffChange         term=reverse cterm=bold ctermfg=16 ctermbg=12
+hi DiffDelete         term=reverse cterm=bold ctermfg=16 ctermbg=9
+hi DiffText           term=reverse cterm=bold ctermfg=16 ctermbg=7
+hi SignColumn         term=standout ctermfg=4 ctermbg=7
+hi Conceal            ctermfg=7 ctermbg=8
+hi SpellBad           term=reverse ctermfg=16 ctermbg=160
+hi SpellCap           term=reverse ctermbg=12
+hi SpellRare          term=reverse ctermbg=13
+hi SpellLocal         term=underline ctermbg=14
+hi Pmenu              ctermfg=0 ctermbg=13
+hi PmenuSel           ctermfg=16 ctermbg=156
+hi PmenuSbar          ctermbg=7
+hi PmenuThumb         ctermbg=0
+hi TabLine            term=underline cterm=underline ctermfg=0 ctermbg=7
+hi TabLineSel         term=bold cterm=bold
+hi TabLineFill        term=reverse cterm=reverse
+hi CursorColumn       term=reverse ctermbg=7
+hi CursorLine         term=underline cterm=underline ctermbg=234
+hi ColorColumn        term=reverse ctermbg=9
+hi MatchParen         term=reverse ctermbg=14
+hi Comment            term=bold ctermfg=8
+hi Constant           term=underline cterm=bold ctermfg=255
+hi Special            term=bold cterm=bold ctermfg=153
+hi Identifier         term=underline ctermfg=223
+hi Statement          term=bold cterm=bold ctermfg=230
+hi PreProc            term=underline cterm=bold ctermfg=222
+hi Type               term=underline cterm=bold ctermfg=193
+hi Underlined         term=underline cterm=underline ctermfg=5
+hi Ignore             ctermfg=196 ctermbg=60
+hi Error              term=reverse ctermfg=16 ctermbg=9
+hi Todo               term=standout ctermfg=0 ctermbg=11
 hi String             ctermfg=230
 hi Character          cterm=bold ctermfg=230
 hi Number             cterm=bold ctermfg=153
 hi Boolean            ctermfg=207
 hi Float              cterm=bold ctermfg=153
-hi Function           ctermfg=11 guifg=#FFD2A7
+hi Function           ctermfg=11
 hi Conditional        cterm=bold ctermfg=149
 hi Repeat             cterm=bold ctermfg=208
 hi Label              cterm=bold ctermfg=225
-hi Operator           ctermfg=12 guifg=#6699CC
+hi Operator           ctermfg=12
 hi Keyword            cterm=bold ctermfg=86
 hi Exception          cterm=bold ctermfg=86
 hi Include            cterm=bold ctermfg=114
@@ -100,32 +100,6 @@ hi link SyntasticStyleErrorLine     SyntasticErrorLine
 hi link SyntasticStyleWarningLine     SyntasticWarningLine
 hi link SyntasticError     SpellBad
 hi link SyntasticWarning     SpellCap
-hi airline_x_inactive     ctermfg=238 ctermbg=233 guifg=#9e9e9e guibg=#303030
-hi airline_y_inactive     ctermfg=238 ctermbg=233 guifg=#9e9e9e guibg=#303030
-hi airline_z_inactive     ctermfg=238 ctermbg=233 guifg=#9e9e9e guibg=#303030
-hi airline_a_inactive     term=bold cterm=bold ctermfg=238 ctermbg=233 gui=bold guifg=#9e9e9e guibg=#303030
-hi airline_b_inactive     ctermfg=238 ctermbg=233 guifg=#9e9e9e guibg=#303030
-hi airline_c_inactive     ctermfg=238 ctermbg=233 guifg=#9e9e9e guibg=#303030
-hi airline_file_inactive     ctermfg=238 ctermbg=233 guifg=#9e9e9e guibg=#303030
-hi airline_x_inactive_to_airline_y_inactive     ctermfg=233 ctermbg=233
-hi airline_c_inactive_to_airline_x_inactive     ctermfg=233 ctermbg=233
-hi airline_a_inactive_to_airline_b_inactive     ctermfg=233 ctermbg=233
-hi airline_z_inactive_to_warningmsg_inactive     ctermfg=233 ctermbg=233
-hi airline_y_inactive_to_airline_z_inactive     ctermfg=233 ctermbg=233
-hi airline_b_inactive_to_airline_c_inactive     ctermfg=233 ctermbg=233
-hi airline_x          ctermfg=231 ctermbg=23 guifg=#ffffff guibg=#002b2b
-hi airline_y          ctermfg=231 ctermbg=29 guifg=#ffffff guibg=#003f3f
-hi airline_z          ctermfg=231 ctermbg=36 guifg=#ffffff guibg=#005252
-hi airline_a          term=bold cterm=bold ctermfg=231 ctermbg=36 gui=bold guifg=#ffffff guibg=#005252
-hi airline_b          ctermfg=231 ctermbg=29 guifg=#ffffff guibg=#003f3f
-hi airline_c          ctermfg=231 ctermbg=23 guifg=#ffffff guibg=#002b2b
-hi airline_file       ctermfg=231 ctermbg=23 guifg=#ffffff guibg=#002b2b
-hi airline_x_to_airline_y     ctermfg=29 ctermbg=23
-hi airline_c_to_airline_x     ctermfg=23 ctermbg=23
-hi airline_a_to_airline_b     ctermfg=36 ctermbg=29
-hi airline_z_to_warningmsg     ctermfg=9 ctermbg=36
-hi airline_y_to_airline_z     ctermfg=36 ctermbg=29
-hi airline_b_to_airline_c     ctermfg=29 ctermbg=23
 hi link uniteQuickMatchTrigger     Special
 hi link uniteCandidateSourceName     Type
 hi link uniteCandidateAbbr     Normal
@@ -152,14 +126,14 @@ hi link pythonString       String
 hi link pythonTodo         Todo
 hi link pythonComment      Comment
 hi link pythonEscape       Special
-hi pythonSpaceError     ctermbg=9 guibg=red
+hi pythonSpaceError     ctermbg=9
 hi link pythonDoctest      Special
 hi link pythonRawString     String
 hi link pythonExceptions     Structure
 hi link pythonDoctestValue     Define
-hi GitGutterAddDefault     ctermfg=2 guifg=#009900
-hi GitGutterChangeDefault     ctermfg=3 guifg=#bbbb00
-hi GitGutterDeleteDefault     ctermfg=1 guifg=#ff2222
+hi GitGutterAddDefault     ctermfg=2
+hi GitGutterChangeDefault     ctermfg=3
+hi GitGutterDeleteDefault     ctermfg=1
 hi link GitGutterChangeDeleteDefault     GitGutterChangeDefault
 hi link GitGutterChangeDelete     GitGutterChangeDeleteDefault
 hi link GitGutterAddLine     DiffAdd
@@ -197,24 +171,18 @@ hi link objcMethodName     Identifier
 hi link objcMethodArg      Normal
 hi link objcMessageName     Identifier
 hi link TagListFileName     Directory
-hi airline_y_inactive_to_airline_z_inactive_inactive     ctermfg=233 ctermbg=233
-hi airline_c_inactive_to_airline_x_inactive_inactive     ctermfg=233 ctermbg=233
-hi airline_x_inactive_to_airline_y_inactive_inactive     ctermfg=233 ctermbg=233
-hi airline_b_inactive_to_airline_c_inactive_inactive     ctermfg=233 ctermbg=233
-hi airline_a_inactive_to_airline_b_inactive_inactive     ctermfg=233 ctermbg=233
-hi airline_z_inactive_to_warningmsg_inactive_inactive     ctermfg=233 ctermbg=233
 hi link rubyLocalVariableOrMethod     Identifier
 hi link htmlTagName        htmlStatement
 hi link htmlTag            Function
 hi link htmlArg            Type
 hi htmlH1             cterm=bold ctermfg=255
-hi htmlBold           term=bold cterm=bold gui=bold
-hi htmlItalic         term=italic cterm=italic gui=italic
-hi htmlUnderline      term=underline cterm=underline gui=underline
-hi htmlBoldItalic     term=bold,italic cterm=bold,italic gui=bold,italic
-hi htmlBoldUnderline     term=bold,underline cterm=bold,underline gui=bold,underline
-hi htmlUnderlineItalic     term=underline,italic cterm=underline,italic gui=underline,italic
-hi htmlBoldUnderlineItalic     term=bold,underline,italic cterm=bold,underline,italic gui=bold,underline,italic
+hi htmlBold           term=bold cterm=bold
+hi htmlItalic         term=italic cterm=italic
+hi htmlUnderline      term=underline cterm=underline
+hi htmlBoldItalic     term=bold,italic cterm=bold,italic
+hi htmlBoldUnderline     term=bold,underline cterm=bold,underline
+hi htmlUnderlineItalic     term=underline,italic cterm=underline,italic
+hi htmlBoldUnderlineItalic     term=bold,underline,italic cterm=bold,underline,italic
 hi link htmlLink           Underlined
 hi link xmlString          xmlTagName
 hi link xmlAttrib          xmlTag
@@ -312,12 +280,6 @@ hi htmlH3             cterm=bold ctermfg=251
 hi htmlH4             cterm=bold ctermfg=249
 hi htmlH5             cterm=bold ctermfg=247
 hi htmlH6             cterm=bold ctermfg=245
-hi airline_y_inactive_inactive_to_airline_z_inactive_inactive     ctermfg=233 ctermbg=233
-hi airline_c_inactive_inactive_to_airline_x_inactive_inactive     ctermfg=233 ctermbg=233
-hi airline_x_inactive_inactive_to_airline_y_inactive_inactive     ctermfg=233 ctermbg=233
-hi airline_y_inactive_inactive_to_airline_z_inactive_inactive_inactive     ctermfg=233 ctermbg=233
-hi airline_x_inactive_inactive_to_airline_y_inactive_inactive_inactive     ctermfg=233 ctermbg=233
-hi airline_c_inactive_inactive_to_airline_x_inactive_inactive_inactive     ctermfg=233 ctermbg=233
 hi link htmlError          Error
 hi link htmlSpecialChar     Special
 hi link javaScriptExpression     javaScript
