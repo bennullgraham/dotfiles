@@ -1,7 +1,7 @@
 " Theme
 set t_Co=256
 set bg=dark
-colorscheme luna-term-mod
+colorscheme hrm
 syntax enable
 
 " Performance
