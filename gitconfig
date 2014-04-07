@@ -24,6 +24,7 @@
     dvs = !git diff --staged | view -
     dw = diff --word-diff=color
     dws = diff --staged --word-diff=color
+    a = !git config -l | grep alias
 
 [core]
     excludesfile = ~/.gitignore
