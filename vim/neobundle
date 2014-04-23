@@ -16,6 +16,7 @@ NeoBundle 'Shougo/vimproc', {
       \     'unix'    : 'make -f make_unix.mak',
       \    },
       \ }
+NeoBundle 'godlygeek/tabular.git'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'editorconfig/editorconfig-vim'
@@ -28,8 +29,9 @@ NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
-NeoBundle "pangloss/vim-javascript"
-NeoBundle "tsukkee/unite-tag"
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'tsukkee/unite-tag'
+NeoBundle 'kshenoy/vim-signature'
 " -------------------------------------
 
 " (Apparently) required
@@ -42,7 +44,7 @@ NeoBundleCheck
 " -------------------------------------
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'ubaryd'
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1

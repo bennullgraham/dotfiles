@@ -5,7 +5,7 @@ endif
 let g:colors_name = ''
 
 hi Normal             ctermfg=254 ctermbg=0    cterm=none
-hi SignColumn         ctermfg=NONE ctermbg=0    cterm=NONE
+hi SignColumn         ctermfg=NONE ctermbg=NONE    cterm=NONE
 hi SpecialKey         term=bold ctermfg=4
 hi NonText            term=bold ctermfg=230 ctermbg=NONE
 hi Directory          term=bold ctermfg=64
@@ -14,12 +14,12 @@ hi IncSearch          term=reverse ctermfg=255 ctermbg=25
 hi Search             term=reverse ctermbg=11
 hi MoreMsg            term=bold ctermfg=230
 hi ModeMsg            term=bold ctermfg=230
-hi LineNr             term=underline cterm=bold ctermfg=8 ctermbg=235
+hi LineNr             term=underline cterm=bold ctermfg=235 ctermbg=NONE
 hi CursorLineNr       term=bold ctermfg=3
 hi Question           term=standout ctermfg=194
 hi StatusLine         term=bold,reverse cterm=bold ctermfg=15 ctermbg=8
 hi StatusLineNC       term=reverse ctermfg=7 ctermbg=0
-hi VertSplit          term=reverse ctermfg=7 ctermbg=0
+hi VertSplit          ctermfg=235  ctermbg=NONE cterm=NONE
 hi Title              term=bold cterm=bold ctermfg=255 ctermbg=60
 hi Visual             term=reverse ctermbg=236
 hi WarningMsg         term=standout ctermfg=16 ctermbg=9
@@ -30,7 +30,6 @@ hi DiffAdd            term=reverse cterm=bold ctermfg=16 ctermbg=10
 hi DiffChange         term=reverse cterm=bold ctermfg=16 ctermbg=12
 hi DiffDelete         term=reverse cterm=bold ctermfg=16 ctermbg=9
 hi DiffText           term=reverse cterm=bold ctermfg=16 ctermbg=7
-hi SignColumn         term=standout ctermfg=4 ctermbg=7
 hi Conceal            ctermfg=7 ctermbg=8
 hi SpellBad           term=reverse ctermfg=16 ctermbg=160
 hi SpellCap           term=reverse ctermbg=12
@@ -44,7 +43,7 @@ hi TabLine            term=underline cterm=underline ctermfg=0 ctermbg=7
 hi TabLineSel         term=bold cterm=bold
 hi TabLineFill        term=reverse cterm=reverse
 hi CursorColumn       term=reverse ctermbg=7
-hi CursorLine         term=underline cterm=underline ctermbg=234
+hi CursorLine         ctermbg=235
 hi ColorColumn        term=reverse ctermbg=9
 hi MatchParen         term=reverse ctermbg=14
 hi Comment            term=bold ctermfg=8
@@ -63,19 +62,19 @@ hi Character          cterm=bold ctermfg=230
 hi Number             cterm=bold ctermfg=153
 hi Boolean            ctermfg=207
 hi Float              cterm=bold ctermfg=153
-hi Function           ctermfg=11
+hi Function           ctermfg=221
 hi Conditional        cterm=bold ctermfg=149
 hi Repeat             cterm=bold ctermfg=208
 hi Label              cterm=bold ctermfg=225
-hi Operator           ctermfg=12
+hi Operator           ctermfg=185
 hi Keyword            cterm=bold ctermfg=86
 hi Exception          cterm=bold ctermfg=86
-hi Include            cterm=bold ctermfg=114
+hi Include            ctermfg=117
 hi Define             cterm=bold ctermfg=68
 hi Macro              cterm=bold ctermfg=114
 hi PreCondit          cterm=bold ctermfg=114
 hi StorageClass       cterm=bold ctermfg=78
-hi Structure          cterm=bold ctermfg=114
+hi Structure          ctermfg=114
 hi Typedef            cterm=bold ctermfg=114
 hi Tag                cterm=bold ctermfg=153
 hi SpecialChar        cterm=bold ctermfg=153
@@ -86,7 +85,7 @@ hi Normal             ctermfg=255 ctermbg=233
 hi link pythonParameters     Identifier
 hi link pythonClassParameters     InheritUnderlined
 hi link pythonClass        Normal
-hi link pythonInclude      Operator
+hi link pythonInclude      Include
 hi link pythonStatement     Structure
 hi link pythonConditional     Conditional
 hi link pythonException     Exception
@@ -131,15 +130,6 @@ hi link pythonDoctest      Special
 hi link pythonRawString     String
 hi link pythonExceptions     Structure
 hi link pythonDoctestValue     Define
-hi GitGutterAddDefault     ctermfg=2
-hi GitGutterChangeDefault     ctermfg=3
-hi GitGutterDeleteDefault     ctermfg=1
-hi link GitGutterChangeDeleteDefault     GitGutterChangeDefault
-hi link GitGutterChangeDelete     GitGutterChangeDeleteDefault
-hi link GitGutterAddLine     DiffAdd
-hi link GitGutterChangeLine     DiffChange
-hi link GitGutterDeleteLine     DiffDelete
-hi link GitGutterChangeDeleteLine     GitGutterChangeLineDefault
 hi Cursor             cterm=bold ctermfg=255 ctermbg=167
 hi link phpFunctions       Function
 hi link phpSuperglobal     Identifier
