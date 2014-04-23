@@ -28,7 +28,8 @@ P_VCS=""
 
 PROMPT='
 $P_HOST${vcs_info_msg_0_} \
-%{$FG[105]%}%(!.#.»)%{$reset_color%} '
+%{$FG[109]%}%(!.#.≋)%{$reset_color%} '
+# %{$FG[105]%}%(!.#.»)%{$reset_color%} '
 PROMPT2='%{$fg[red]%}>>> %{$reset_color%}'
 
 # right prompt
