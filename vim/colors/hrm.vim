@@ -45,7 +45,7 @@ hi TabLineFill        term=reverse cterm=reverse
 hi CursorColumn       term=reverse ctermbg=7
 hi CursorLine         ctermbg=235
 hi ColorColumn        term=reverse ctermbg=9
-hi MatchParen         term=reverse ctermbg=14
+hi MatchParen         ctermfg=1 cterm=bold ctermbg=NONE
 hi Comment            term=bold ctermfg=8
 hi Constant           term=underline cterm=bold ctermfg=255
 hi Special            term=bold cterm=bold ctermfg=153
@@ -57,7 +57,7 @@ hi Underlined         term=underline cterm=underline ctermfg=5
 hi Ignore             ctermfg=196 ctermbg=60
 hi Error              term=reverse ctermfg=16 ctermbg=9
 hi Todo               term=standout ctermfg=0 ctermbg=11
-hi String             ctermfg=230
+hi String             ctermfg=223
 hi Character          cterm=bold ctermfg=230
 hi Number             cterm=bold ctermfg=153
 hi Boolean            ctermfg=207
