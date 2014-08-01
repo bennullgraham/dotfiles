@@ -38,7 +38,7 @@ set wildmenu
 set fenc=utf-8
 
 " comma is <leader> (default \)
-let mapleader = ","
+let mapleader = " "
 
 " Search/Match
 set incsearch  " highlight while searching
@@ -80,6 +80,7 @@ augroup END
 inoremap jk <esc>
 
 " Unite mappings
+let g:unite_source_history_yank_enable = 1
 nmap <Leader>b :<C-u>Unite -no-split -buffer-name=unite buffer<cr>
 nmap <Leader>p :<C-u>Unite -no-split -buffer-name=unite  -start-insert file_rec/async<cr>
 nmap <Leader>g :<C-u>Unite -no-split -buffer-name=unite grep:.<cr>
@@ -87,6 +88,7 @@ nmap <Leader>o :<C-u>Unite -no-split -buffer-name=unite outline<cr>
 nmap <Leader>c :<C-u>Unite -no-split -buffer-name=unite -start-insert tag<cr>
 nmap <Leader>t :<C-u>Unite -no-split -buffer-name=unite tab<cr>
 nmap <Leader>m :<C-u>Unite -no-split -buffer-name=unite file_rec/async:/home/bgraham/doc/md grep:/home/bgraham/doc/md<cr>
+nmap <leader>y :<C-u>Unite -no-split -buffer-name=yank  history/yank<cr>
 
 " order python imports. kinda fragile.
 nmap <Leader>io gg<S-v>}k:sort<cr><C-o>
@@ -145,3 +147,15 @@ nmap Q @q
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
             \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
             \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" http://vim.wikia.com/wiki/Simplifying_regular_expressions_using_magic_and_no-magic
+" Permanent 'very magic' mode. Makes regex chars /always/ have special
+" meaning, as the universe intended.
+nnoremap / /\v
+vnoremap / /\v
+cnoremap %s/ %smagic/
+cnoremap \>s/ \>smagic/
+nnoremap :g/ :g/\v
+nnoremap :g// :g//
+
+nmap <tab> %
