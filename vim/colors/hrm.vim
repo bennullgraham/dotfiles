@@ -62,7 +62,7 @@ hi Character          cterm=bold ctermfg=230
 hi Number             cterm=bold ctermfg=153
 hi Boolean            ctermfg=207
 hi Float              cterm=bold ctermfg=153
-hi Function           ctermfg=221
+hi Function           ctermfg=220
 hi Conditional        cterm=bold ctermfg=149
 hi Repeat             cterm=bold ctermfg=208
 hi Label              cterm=bold ctermfg=225
