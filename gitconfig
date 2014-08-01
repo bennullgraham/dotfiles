@@ -8,23 +8,24 @@
     default = current
 
 [alias]
-    st = status
+    a = !git config -l | grep alias
+    au = !git add -u && git status
     ci = commit
-    gr = log --abbrev-commit --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %s %C(blue)%an%Creset %Cgreen(%cr)%Creset' --graph --decorate
     co = checkout
-    re = rebase
-    pr = pull --rebase
-    pa = !git pull --rebase && git submodule foreach git pull --rebase
-    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-    lg = log --abbrev-commit --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %s %C(blue)%an%Creset %Cgreen(%cr)%Creset' --graph --decorate
     df = diff
     ds = diff --staged
     dv = !git diff | view -
     dvs = !git diff --staged | view -
     dw = diff --word-diff=color
     dws = diff --staged --word-diff=color
-    a = !git config -l | grep alias
+    gr = log --abbrev-commit --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %s %C(blue)%an%Creset %Cgreen(%cr)%Creset' --graph --decorate
+    lg = log --abbrev-commit --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %s %C(blue)%an%Creset %Cgreen(%cr)%Creset' --graph --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    pa = !git pull --rebase && git submodule foreach git pull --rebase
+    pr = pull --rebase
+    re = rebase
+    st = status
 
 [core]
     excludesfile = ~/.gitignore
