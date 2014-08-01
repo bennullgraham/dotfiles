@@ -16,7 +16,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git, safe-paste)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -62,6 +62,7 @@ alias ll='ls -alh'
 alias grep='grep --color'
 alias dj='python manage.py'
 alias tmux='tmux -2'  # 256 colour
+alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # virtualenvwrapper
 source /usr/local/bin/virtualenvwrapper_lazy.sh 
@@ -120,3 +121,7 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[38;5;246m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[04;38;5;146m'
+
+if [ -e $HOME/bin/agent-restore ]; then
+    source $HOME/bin/agent-restore
+fi
