@@ -2,6 +2,8 @@
 ZSH=$HOME/.dotfiles/oh-my-zsh
 ZSH_CUSTOM=$HOME/.dotfiles/oh-my-zsh-custom
 
+DISABLE_UPDATE_PROMPT=true
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
