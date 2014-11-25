@@ -1,8 +1,11 @@
 " Theme
 set t_Co=256
 set bg=dark
-colorscheme hrm
+colorscheme jellybeans
 syntax enable
+
+" blugh
+set nowrap
 
 " Performance
 set ttyfast
@@ -10,11 +13,12 @@ set synmaxcol=256
 syntax sync minlines=256
 
 " Tabbing
-set smartindent
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set softtabstop=4
+" vim-sleuth plugin used to autodetect these
+" set smartindent
+" set tabstop=4
+" set shiftwidth=4
+" set expandtab
+" set softtabstop=4
 
 "" Keep swap and backup files in a central place. The trailing double slash
 "" enables a no-collision file naming scheme.
@@ -36,6 +40,9 @@ set laststatus=2
 
 " Tab completion - 'wildmenu'
 set wildmenu
+
+" pep8 hardmode engage
+set tw=79
 
 " Encoding
 set fenc=utf-8
@@ -89,11 +96,10 @@ nmap <Leader>p :<C-u>Unite -no-split -buffer-name=unite  -start-insert file_rec/
 nmap <Leader>g :<C-u>Unite -no-split -buffer-name=unite grep:.<cr>
 nmap <Leader>o :<C-u>Unite -no-split -buffer-name=unite outline<cr>
 nmap <Leader>t :<C-u>Unite -no-split -buffer-name=unite -start-insert tag<cr>
-nmap <Leader>m :<C-u>Unite -no-split -buffer-name=unite file_rec/async:/home/bgraham/doc/md grep:/home/bgraham/doc/md<cr>
 nmap <leader>y :<C-u>Unite -no-split -buffer-name=yank  history/yank<cr>
 
-" order python imports. kinda fragile.
-nmap <Leader>io gg<S-v>}k:sort<cr><C-o>
+" toggle hlsearch
+nmap <Leader>h :set hlsearch!<cr>
 
 " If a tab-local working directory is defined, cd to it
 " Usage: :let t:wd = "some/directory"
@@ -119,6 +125,9 @@ augroup END
 " docstring insertion, works around delimitmate going berserk on python
 " triple-quote strings.
 nmap <leader>d o"""jko"""jkO
+
+" almost-inverse of J; split current line on next comma
+nmap <leader>J f,ls<cr>jkw
 
 " next and previous errors
 nmap ]e :lne<cr>
@@ -168,3 +177,8 @@ nnoremap J mzJ`z
 
 " /s global replace by default, now /g toggles back to single.
 set gdefault
+
+" auto-fold frozen models in south migrations.
+augroup ModelsBegone
+    autocmd! BufEnter *migrations/*.py :execute "normal /models = \<cr>zf%\<C-o>"
+augroup END
