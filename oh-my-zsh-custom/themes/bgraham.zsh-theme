@@ -7,12 +7,14 @@ eval my_orange='$FG[214]'
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr "%{$my_orange%}∙%{$reset_color%}"
-zstyle ':vcs_info:*' unstagedstr "%{$my_orange%}∘%{$reset_color%}"
+# zstyle ':vcs_info:*' stagedstr "%{$my_orange%} ∙%{$reset_color%}"
+# zstyle ':vcs_info:*' unstagedstr "%{$my_orange%} ∘%{$reset_color%}"
+zstyle ':vcs_info:*' stagedstr "%{$my_orange%}"
+zstyle ':vcs_info:*' unstagedstr "%{$my_orange%}"
 zstyle ':vcs_info:*' actionformats \
-    "%{$FG[036]%}(%c%u%{$FG[031]%}%b%{$FG[015]%}!%a%{$FG[036]%})"
+    "%{$FG[036]%}(%c%u%{$FG[031]%}%b %{$FG[015]%}!%a%{$FG[036]%})"
 zstyle ':vcs_info:*' formats       \
-    "%{$FG[036]%} %{$FG[109]%}%b%{$FG[036]%} %u%c"
+    "%{$FG[036]%} %{$FG[109]%}%b%{$FG[109]%}%u%c"
 function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo "%{$FG[242]$BG[235]%} `basename $VIRTUAL_ENV` %{$reset_color%} "
 }
@@ -27,8 +29,8 @@ P_VCS=""
 # primary prompt
 
 PROMPT='
-$P_HOST${vcs_info_msg_0_} \
-%{$FG[109]%}%(!.#.≋)%{$reset_color%} '
+$P_HOST${vcs_info_msg_0_}\
+ %(!.#.≋)%{$reset_color%} '
 # %{$FG[105]%}%(!.#.»)%{$reset_color%} '
 PROMPT2='%{$fg[red]%}>>> %{$reset_color%}'
 
