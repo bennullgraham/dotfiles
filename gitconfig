@@ -22,10 +22,11 @@
     lg = log --abbrev-commit --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %s %C(blue)%an%Creset %Cgreen(%cr)%Creset' --graph --decorate
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-    pa = !git pull --rebase && git submodule foreach git pull --rebase
+    pa = !git pull --rebase && git submodule update --init
     pr = pull --rebase
     re = rebase
     st = status
+    tc = !git log --oneline | egrep -o '\\[[a-z]+\\]' | sort | uniq -c | sort -n --reverse
 
 [core]
     excludesfile = ~/.gitignore
