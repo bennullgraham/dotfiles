@@ -372,6 +372,10 @@ call s:X("SpellLocal","","2D7067","underline","","Green")
 hi! link diffRemoved Constant
 hi! link diffAdded String
 
+" Python
+
+hi! link pythonInclude Structure
+
 " VimDiff
 
 call s:X("DiffAdd","D2EBBE","437019","","White","DarkGreen")

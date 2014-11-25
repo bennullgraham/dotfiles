@@ -24,7 +24,7 @@ hi Title              term=bold cterm=bold ctermfg=255 ctermbg=60
 hi Visual             term=reverse ctermbg=236
 hi WarningMsg         term=standout ctermfg=16 ctermbg=9
 hi WildMenu           term=standout ctermfg=0 ctermbg=11
-hi Folded             term=standout ctermfg=4 ctermbg=7
+hi Folded             ctermfg=238 ctermbg=232
 hi FoldColumn         term=standout ctermfg=4 ctermbg=7
 hi DiffAdd            term=reverse cterm=bold ctermfg=16 ctermbg=10
 hi DiffChange         term=reverse cterm=bold ctermfg=16 ctermbg=12
