@@ -65,6 +65,8 @@ alias grep='grep --color'
 alias dj='python manage.py'
 alias tmux='tmux -2'  # 256 colour
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias count='sort | uniq -c | sort -n'
+alias le='less'
 
 # virtualenvwrapper
 source /usr/local/bin/virtualenvwrapper_lazy.sh 
