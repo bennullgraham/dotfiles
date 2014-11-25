@@ -16,10 +16,13 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 
-" Keep swap and backup files in a central place. The trailing double slash
-" enables a no-collision file naming scheme.
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
+"" Keep swap and backup files in a central place. The trailing double slash
+"" enables a no-collision file naming scheme.
+" set backupdir=~/.vim/backup//
+" set directory=~/.vim/swap//
+"" Actually, let's just not use them
+set nobackup
+set noswapfile
 
 " Check for modelines
 set modeline
@@ -62,7 +65,7 @@ set listchars=tab:>-,trail:-
 set hidden
 
 " Maintain some context around the cursor
-set scrolloff=3
+set scrolloff=10
 
 " File-specific stuff
 autocmd FileType puppet setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -85,8 +88,7 @@ nmap <Leader>b :<C-u>Unite -no-split -buffer-name=unite buffer<cr>
 nmap <Leader>p :<C-u>Unite -no-split -buffer-name=unite  -start-insert file_rec/async<cr>
 nmap <Leader>g :<C-u>Unite -no-split -buffer-name=unite grep:.<cr>
 nmap <Leader>o :<C-u>Unite -no-split -buffer-name=unite outline<cr>
-nmap <Leader>c :<C-u>Unite -no-split -buffer-name=unite -start-insert tag<cr>
-nmap <Leader>t :<C-u>Unite -no-split -buffer-name=unite tab<cr>
+nmap <Leader>t :<C-u>Unite -no-split -buffer-name=unite -start-insert tag<cr>
 nmap <Leader>m :<C-u>Unite -no-split -buffer-name=unite file_rec/async:/home/bgraham/doc/md grep:/home/bgraham/doc/md<cr>
 nmap <leader>y :<C-u>Unite -no-split -buffer-name=yank  history/yank<cr>
 
@@ -158,4 +160,11 @@ cnoremap \>s/ \>smagic/
 nnoremap :g/ :g/\v
 nnoremap :g// :g//
 
+" % is hard to press
 nmap <tab> %
+
+" preserve cursor position when joining lines
+nnoremap J mzJ`z
+
+" /s global replace by default, now /g toggles back to single.
+set gdefault
