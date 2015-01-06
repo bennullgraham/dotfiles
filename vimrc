@@ -4,6 +4,10 @@ set bg=dark
 colorscheme jellybeans-mod
 syntax enable
 
+" one true whitespace
+set ts=4 sts=4 sw=4
+set expandtab
+
 " blugh
 set nowrap
 
@@ -173,7 +177,7 @@ nnoremap :g// :g//
 nmap <tab> %
 
 " preserve cursor position when joining lines
-nnoremap J mzJ`z
+nnoremap J mzJ`zmz
 
 " /s global replace by default, now /g toggles back to single.
 set gdefault
