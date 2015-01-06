@@ -1,0 +1,10 @@
+# vim: set ft=sh :
+
+# bump command and show an empty PS1; bring old command back after executing
+bindkey "^Q" push-input
+
+# ^xe to open command in $EDITOR
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
+

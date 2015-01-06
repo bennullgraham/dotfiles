@@ -1,0 +1,38 @@
+# History for all
+setopt \
+    histignorealldups \
+    sharehistory \
+    appendhistory \
+    extended_history \
+    inc_append_history
+
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh/hist
+
+# Use emacs keybindings even if our EDITOR is set to vi
+bindkey -e
+
+# initialise fasd if it's around
+if command -v fasd &>/dev/null; then
+    eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-wcomp zsh-ccomp-install zsh-wcomp-install)"
+fi
+
+# virtualenv
+source /usr/local/bin/virtualenvwrapper_lazy.sh
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# use 'cdp' as shortcut for cding with fasd
+function cdp() {
+    if command -v fasd &>/dev/null; then
+        local dir=`fasd -ld "$1" | tail -n1`
+        cd "$dir"
+    else
+        echo "Cannot find fasd?" > /dev/stderr
+    fi
+}
+
+source ~/.zsh/aliases
+source ~/.zsh/prompt
+source ~/.zsh/binds
+source ~/.zsh/completion

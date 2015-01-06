@@ -1,0 +1,7 @@
+# vim: set ft=sh :
+
+autoload -Uz compinit && compinit
+setopt auto_menu
+unsetopt menu_complete
+zstyle ':completion:*' menu select
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}

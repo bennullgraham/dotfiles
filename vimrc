@@ -1,7 +1,7 @@
 " Theme
 set t_Co=256
 set bg=dark
-colorscheme jellybeans
+colorscheme jellybeans-mod
 syntax enable
 
 " blugh

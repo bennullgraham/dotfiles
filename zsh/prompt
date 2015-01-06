@@ -1,0 +1,36 @@
+# vim: set ft=sh :
+
+# allows precmd
+setopt prompt_subst
+
+autoload -Uz colors && colors
+autoload -Uz vcs_info
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr "%F{214}" # no printable chars; just change the colour of subsequent chars
+zstyle ':vcs_info:*' unstagedstr "%F{214}"
+zstyle ':vcs_info:*' formats "%F{73}%b %F{230}%u%c"
+
+venv_info () {
+    if [ -e "$VIRTUAL_ENV" ]; then
+        echo "%F{242}%K{234} `basename $VIRTUAL_ENV` %b%f "
+    fi
+}
+
+# "Executed before each prompt."
+precmd () {
+    vcs_info
+}
+
+host="%F{036}%m%f "
+vcs='${vcs_info_msg_0_}'
+water="≋%f"
+cwd="%F{242}%~%f"
+# venv="$(venv_info)"
+
+PROMPT="
+${host}${vcs}${water} "
+PROMPT2="%F{red}>%f "
+
+RPROMPT='$cwd $(venv_info)'
