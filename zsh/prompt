@@ -23,14 +23,16 @@ precmd () {
     vcs_info
 }
 
-host="%F{036}%m%f "
-vcs='${vcs_info_msg_0_}'
-water="≋%f"
-cwd="%F{242}%~%f"
+_host="%F{036}%m%f "
+_vcs='${vcs_info_msg_0_}'
+_water="≋%f"
+_cwd="%F{242}%~%f"
+_time="%F{250}%T%f"
+
 # venv="$(venv_info)"
 
 PROMPT="
-${host}${vcs}${water} "
+${_host}${_vcs}${_water} "
 PROMPT2="%F{red}>%f "
 
-RPROMPT='$cwd $(venv_info)'
+RPROMPT='$_cwd $(venv_info)$_time'
