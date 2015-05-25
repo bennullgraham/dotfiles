@@ -4,3 +4,6 @@ alias ll='ls -lah'
 alias l='ll'  # efficiency!
 alias grep='grep --color=auto'
 alias g='git'
+
+# https://bugs.launchpad.net/ubuntu/+source/rxvt-unicode/+bug/772924
+alias ssh='TERM=rxvt-unicode ssh'

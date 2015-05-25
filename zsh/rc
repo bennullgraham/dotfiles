@@ -3,12 +3,14 @@ setopt \
     histignorealldups \
     sharehistory \
     appendhistory \
-    extended_history \
-    inc_append_history
+    extended_history
 
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh/hist
+
+# one true editor (or maybe that's ed?)
+EDITOR=vim
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
