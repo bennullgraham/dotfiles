@@ -2,3 +2,5 @@
 *.sublime-workspace
 .*.swp
 /tags
+/celerybeat-schedule
+/.noseids
