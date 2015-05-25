@@ -33,3 +33,7 @@
 
 [include]
     path = ~/.gitconfig.local
+
+[user]
+    name = Ben Graham
+    email = bgraham@bgraham.com.au
