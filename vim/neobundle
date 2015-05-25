@@ -4,7 +4,10 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Bundles here:
 " -------------------------------------
@@ -16,25 +19,24 @@ NeoBundle 'Shougo/vimproc', {
       \     'unix'    : 'make -f make_unix.mak',
       \    },
       \ }
-NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'Shougo/neocomplcache.vim'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'benmills/vimux'
-NeoBundle 'bling/vim-airline'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'evanmiller/nginx-vim-syntax'
 NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'tpope/vim-sleuth'
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/unite-outline'
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tsukkee/unite-tag'
 " -------------------------------------
 
-" (Apparently) required
+call neobundle#end()
+
 filetype plugin indent on
 
 NeoBundleCheck
@@ -42,35 +44,47 @@ NeoBundleCheck
 " -------------------------------------
 " Configs
 " -------------------------------------
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_theme = 'powerlineish'
-
 " neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-
-" complete and close neocomplcache on <tab>
+let g:acp_enableAtStartup = 0  " no default completion
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_fuzzy_completion = 1
+let g:neocomplete#sources#tags#cache_limit_size = 99999999
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplete#ctags_arguments = {
+  \ 'python' : '--languages=python -R --exclude=.git'
+  \ }
 inoremap <expr><TAB>  pumvisible() ? "\<C-n><C-y>" : "\<TAB>"
 
 " enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" don't trap cursor arrowing in insert mode
-inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
-inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
-inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
-inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
 
 " Use ag for search
 if executable('ag')
   let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column --ignore tags'
   let g:unite_source_grep_recursive_opt = ''
+  let g:unite_source_rec_async_command= 'ag --follow --nocolor --nogroup --hidden -g ""'
 endif
+"
+" Set up some custom ignores
+call unite#custom_source('file_rec,file_rec/async,file_mru,file,grep',
+      \ 'ignore_pattern', join([
+      \ '\.git/',
+      \ 'tmp/',
+      \ 'jspm_packages/',
+      \ 'node_modules/',
+      \ '\.builds/',
+      \ 'vendor/',
+      \ 'plugins/',
+      \ 'bower_components/',
+      \ '\.sass-cache'
+      \ ], '\|'))
 
 " syntastic
 let g:syntastic_python_checkers=['flake8']

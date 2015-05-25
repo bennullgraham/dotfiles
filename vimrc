@@ -1,12 +1,20 @@
+set nocompatible
 " Theme
 set t_Co=256
 set bg=dark
-colorscheme jellybeans-mod
+colorscheme jellybeansmod
 syntax enable
+
+" backspace, destroyer of worlds
+set backspace=indent,eol,start
 
 " one true whitespace
 set ts=4 sts=4 sw=4
 set expandtab
+
+" gvim
+set guioptions=''
+set guifont=DejaVu\ Sans\ Mono\ 10
 
 " blugh
 set nowrap
@@ -17,12 +25,8 @@ set synmaxcol=256
 syntax sync minlines=256
 
 " Tabbing
-" vim-sleuth plugin used to autodetect these
-" set smartindent
-" set tabstop=4
-" set shiftwidth=4
-" set expandtab
-" set softtabstop=4
+set smartindent
+set expandtab
 
 "" Keep swap and backup files in a central place. The trailing double slash
 "" enables a no-collision file naming scheme.
@@ -81,26 +85,22 @@ set scrolloff=10
 " File-specific stuff
 autocmd FileType puppet setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab textwidth=180
+autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab textwidth=180
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-" Highlight the current line, only for the active window
-augroup CursorLine
-  au!
-  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  au WinLeave * setlocal nocursorline
-augroup END
 
 " jk to leave insert modes
 inoremap jk <esc>
 
 " Unite mappings
+" extra unite things: https://github.com/unr/dotfiles/blob/master/vim/vim.symlink/plugin/unite.vim
 let g:unite_source_history_yank_enable = 1
 nmap <Leader>b :<C-u>Unite -no-split -buffer-name=unite buffer<cr>
-nmap <Leader>p :<C-u>Unite -no-split -buffer-name=unite  -start-insert file_rec/async<cr>
+nmap <Leader>p :<C-u>Unite -no-split -buffer-name=unite -start-insert file_rec/async<cr>
 nmap <Leader>g :<C-u>Unite -no-split -buffer-name=unite grep:.<cr>
 nmap <Leader>o :<C-u>Unite -no-split -buffer-name=unite outline<cr>
-nmap <Leader>t :<C-u>Unite -no-split -buffer-name=unite -start-insert tag<cr>
-nmap <leader>y :<C-u>Unite -no-split -buffer-name=yank  history/yank<cr>
+nmap <Leader>t :<C-u>Unite -no-split -buffer-name=tags -start-insert tag<cr>
+nmap <leader>y :<C-u>Unite -no-split -buffer-name=yank history/yank<cr>
 
 " toggle hlsearch
 nmap <Leader>h :set hlsearch!<cr>
@@ -182,7 +182,40 @@ nnoremap J mzJ`zmz
 " /s global replace by default, now /g toggles back to single.
 set gdefault
 
-" auto-fold frozen models in south migrations.
-augroup ModelsBegone
-    autocmd! BufEnter *migrations/*.py :execute "normal /models = \<cr>zf%\<C-o>"
+nmap <C-i> :%!isort -<CR>
+
+function! PyImportSort()
+    if executable('isort')
+        delmarks z
+        normal mz
+        %!isort -
+        normal `z
+    endif
+endfunction
+
+augroup pyisort
+    au!
+    au BufWritePre *.py call PyImportSort()
 augroup END
+
+set statusline=%f       "tail of the filename
+set statusline+=\ [%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=\ %y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+
+
+" Highlight the current line, only for the active window
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
+
+" no preview windows created by the completion system plz
+set completeopt-=preview
