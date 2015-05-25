@@ -35,9 +35,9 @@ let g:airline#themes#mute#palette.visual_modified = {
       \ 'airline_c': [ '#ffffff' , '#450000' , 231     , 52      , ''     ] ,
       \ }
 
-let s:IA = [ '#4e4e4e' , '#002b2b' , 59 , 23 , '' ]
+let s:IA = [ '#6e6e6e' , '#002b2b' , 59 , 23 , '' ]
 let g:airline#themes#mute#palette.inactive = airline#themes#generate_color_map(s:IA, s:IA, s:IA)
 
 
-let s:D1 = [ '#9e9e9e' , '#303030', 238, 233 ]
+let s:D1 = [ '#9e9e9e' , '#505050', 239, 232 ]
 let g:airline#themes#mute#palette.inactive = airline#themes#generate_color_map(s:D1, s:D1, s:D1)
