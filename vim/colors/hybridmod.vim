@@ -94,8 +94,8 @@ else
     let s:foreground = "255"   " White
     let s:selection  = "8"    " DarkGrey
     let s:line       = "0"    " Black
-    let s:comment    = "243"  " LightGrey
-    let s:red        = "168"    " LightRed
+    let s:comment    = "7"    " LightGrey
+    let s:red        = "9"    " LightRed
     let s:orange     = "3"    " DarkYellow
     let s:yellow     = "11"   " LightYellow
     let s:green      = "10"   " LightGreen
@@ -292,8 +292,8 @@ exe "hi! String"          .s:fg_green       .s:bg_none        .s:fmt_none
 "		Boolean"
 "		Float"
 
-exe "hi! Identifier"      .s:fg_foreground  .s:bg_none        .s:fmt_bold
-exe "hi! Function"        .s:fg_red         .s:bg_none        .s:fmt_bold
+exe "hi! Identifier"      .s:fg_purple      .s:bg_none        .s:fmt_none
+exe "hi! Function"        .s:fg_yellow      .s:bg_none        .s:fmt_none
 
 exe "hi! Statement"       .s:fg_blue        .s:bg_none        .s:fmt_none
 "		Conditional"
@@ -356,8 +356,6 @@ hi! link diffAdded Special
 "		diffSubname
 "		diffComment
 
-hi! link jediFunction DiffDelete
-hi! link jediFat DiffAdd
 "}}}
 " Legal:"{{{
 " ----------------------------------------------------------------------------
@@ -389,3 +387,12 @@ hi! link jediFat DiffAdd
 " THE SOFTWARE.
 
 " }}}
+
+" bgraham extras
+exe "hi! Function"                   .s:fg_green         .s:bg_none        .s:fmt_none
+exe "hi! pythonStructure"            .s:fg_green         .s:bg_none        .s:fmt_bold
+exe "hi! String"                     .s:fg_aqua          .s:bg_none        .s:fmt_none
+exe "hi! pythonParameters"           .s:fg_foreground    .s:bg_none        .s:fmt_none
+exe "hi! pythonInclude"              .s:fg_blue          .s:bg_none        .s:fmt_none
+exe "hi! pythonExtraOperator"        .s:fg_comment       .s:bg_none        .s:fmt_none
+exe "hi! pythonExtraPseudoOperator"  .s:fg_comment       .s:bg_none        .s:fmt_none

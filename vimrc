@@ -1,8 +1,16 @@
 set nocompatible
+set shell=/bin/sh
+
 " Theme
 set t_Co=256
 set bg=dark
-colorscheme jellybeansmod
+let base16colorspace=256
+let g:hybrid_use_Xresources = 1
+let python_highlight_indent_errors = 1
+let python_highlight_space_errors = 1
+let python_hihghlight_file_headers_as_comments = 1
+set background=dark
+colorscheme hybrid
 syntax enable
 
 " backspace, destroyer of worlds
@@ -25,7 +33,7 @@ set synmaxcol=256
 syntax sync minlines=256
 
 " Tabbing
-set smartindent
+filetype indent on
 set expandtab
 
 "" Keep swap and backup files in a central place. The trailing double slash
@@ -64,8 +72,7 @@ set nohlsearch " consider switching this on for '*' only
 set ignorecase " searches are case insensitive,
 set smartcase  " unless there's at least one uppercase
 
-" Enable hybrid line numbering by enabling both types of numbering
-set relativenumber
+" Line numbering
 set number
 
 " Lower, righter splits get focus after split
@@ -83,11 +90,11 @@ set hidden
 set scrolloff=10
 
 " File-specific stuff
-autocmd FileType puppet setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab textwidth=180
-autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab textwidth=180
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType puppet setlocal sw=2 ts=2 sts=2
+autocmd FileType yaml setlocal sw=2 ts=2 sts=2
+autocmd FileType html setlocal sw=4 ts=4 sts=4 noexpandtab textwidth=180
+autocmd FileType htmldjango setlocal sw=4 ts=4 sts=4 noexpandtab textwidth=180
+autocmd FileType javascript setlocal sw=2 ts=2 sts=2 noexpandtab
 
 " jk to leave insert modes
 inoremap jk <esc>
@@ -95,12 +102,12 @@ inoremap jk <esc>
 " Unite mappings
 " extra unite things: https://github.com/unr/dotfiles/blob/master/vim/vim.symlink/plugin/unite.vim
 let g:unite_source_history_yank_enable = 1
-nmap <Leader>b :<C-u>Unite -no-split -buffer-name=unite buffer<cr>
-nmap <Leader>p :<C-u>Unite -no-split -buffer-name=unite -start-insert file_rec/async<cr>
-nmap <Leader>g :<C-u>Unite -no-split -buffer-name=unite grep:.<cr>
+nmap <Leader>b :Buffers<cr>
+nmap <Leader>p :Files<cr>
+nmap <Leader>g :Ag<cr>
 nmap <Leader>o :<C-u>Unite -no-split -buffer-name=unite outline<cr>
-nmap <Leader>t :<C-u>Unite -no-split -buffer-name=tags -start-insert tag<cr>
-nmap <leader>y :<C-u>Unite -no-split -buffer-name=yank history/yank<cr>
+nmap <Leader>t :Tags<cr>
+
 
 " toggle hlsearch
 nmap <Leader>h :set hlsearch!<cr>
@@ -173,23 +180,18 @@ cnoremap \>s/ \>smagic/
 nnoremap :g/ :g/\v
 nnoremap :g// :g//
 
-" % is hard to press
-nmap <tab> %
-
 " preserve cursor position when joining lines
 nnoremap J mzJ`zmz
 
 " /s global replace by default, now /g toggles back to single.
 set gdefault
 
-nmap <C-i> :%!isort -<CR>
-
 function! PyImportSort()
     if executable('isort')
         delmarks z
         normal mz
         %!isort -
-        normal `z
+        normal g`z
     endif
 endfunction
 
@@ -219,3 +221,19 @@ augroup END
 
 " no preview windows created by the completion system plz
 set completeopt-=preview
+
+" visual mode is free like a bird
+set virtualedit=block
+
+" tab complete like shell: as much as possible then show remaining matches.
+set wildmode=longest,list
+
+" use smart quotes in proselike formats
+augroup textobj_quote
+    autocmd!
+    autocmd FileType markdown call textobj#quote#init()
+    autocmd FileType textile call textobj#quote#init()
+    autocmd FileType text call textobj#quote#init({'educate': 0})
+augroup END
+
+nmap <Leader>j :%!json_pp<cr>

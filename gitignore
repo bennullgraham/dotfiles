@@ -4,3 +4,6 @@
 /tags
 /celerybeat-schedule
 /.noseids
+*.ipynb
+.ipynb_checkpoints
+whoosh_index

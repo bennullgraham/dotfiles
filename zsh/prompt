@@ -25,7 +25,8 @@ precmd () {
 
 _host="%F{036}%m%f "
 _vcs='${vcs_info_msg_0_}'
-_water="≋%f"
+# _water="≋%f"
+_water="»%f"
 _cwd="%F{242}%~%f"
 _time="%F{250}%T%f"
 
