@@ -9,3 +9,5 @@ alias g='git'
 alias ssh='TERM=xterm-256color ssh'
 
 alias ipy='ipython'
+
+alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
