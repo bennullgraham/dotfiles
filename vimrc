@@ -2,15 +2,17 @@ set nocompatible
 set shell=/bin/sh
 
 " Theme
-set t_Co=256
-set bg=dark
-let base16colorspace=256
-let g:hybrid_use_Xresources = 1
 let python_highlight_indent_errors = 1
 let python_highlight_space_errors = 1
 let python_hihghlight_file_headers_as_comments = 1
+" consistent background colour
+set t_ut=
 set background=dark
-colorscheme hybrid
+set termguicolors
+set term=screen-256color
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+colorscheme molokai256
 syntax enable
 
 " backspace, destroyer of worlds
@@ -30,7 +32,7 @@ set nowrap
 " Performance
 set ttyfast
 set synmaxcol=256
-syntax sync minlines=256
+syntax sync minlines=1024
 
 " Tabbing
 filetype indent on
@@ -81,7 +83,8 @@ set splitbelow
 
 " Show trailing spaces, tabs
 set list
-set listchars=tab:>-,trail:-
+" set listchars=tab:»·,trail:·
+set listchars=tab:· ,trail:·,nbsp:→
 
 " Allow buffers to disappear without being written
 set hidden
@@ -92,9 +95,18 @@ set scrolloff=10
 " File-specific stuff
 autocmd FileType puppet setlocal sw=2 ts=2 sts=2
 autocmd FileType yaml setlocal sw=2 ts=2 sts=2
+autocmd FileType rst setlocal sw=3 ts=3 sts=3 expandtab
 autocmd FileType html setlocal sw=4 ts=4 sts=4 noexpandtab textwidth=180
+autocmd FileType php setlocal sw=4 ts=4 sts=4 noexpandtab textwidth=180
+autocmd FileType ctp setlocal sw=4 ts=4 sts=4 noexpandtab textwidth=180
 autocmd FileType htmldjango setlocal sw=4 ts=4 sts=4 noexpandtab textwidth=180
 autocmd FileType javascript setlocal sw=2 ts=2 sts=2 noexpandtab
+
+" custom surrounds for i18n monkeywork
+" ysw% = {% trans "word" %}
+autocmd FileType htmldjango let b:surround_37 = "{% trans \"\r\" %}"
+" ysw_ = _(word)
+autocmd FileType python let b:surround_95 = "_(\r)"
 
 " jk to leave insert modes
 inoremap jk <esc>
@@ -186,30 +198,8 @@ nnoremap J mzJ`zmz
 " /s global replace by default, now /g toggles back to single.
 set gdefault
 
-function! PyImportSort()
-    if executable('isort')
-        delmarks z
-        normal mz
-        %!isort -
-        normal g`z
-    endif
-endfunction
-
-augroup pyisort
-    au!
-    au BufWritePre *.py call PyImportSort()
-augroup END
-
-set statusline=%f       "tail of the filename
-set statusline+=\ [%{strlen(&fenc)?&fenc:'none'}, "file encoding
-set statusline+=%{&ff}] "file format
-set statusline+=%h      "help file flag
-set statusline+=%m      "modified flag
-set statusline+=%r      "read only flag
-set statusline+=\ %y      "filetype
-set statusline+=%=      "left/right separator
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
+let g:ale_fixers = {'python': ['isort']}
+let g:ale_fix_on_save = 1
 
 
 " Highlight the current line, only for the active window
@@ -236,4 +226,33 @@ augroup textobj_quote
     autocmd FileType text call textobj#quote#init({'educate': 0})
 augroup END
 
-nmap <Leader>j :%!json_pp<cr>
+nmap <Leader>j :%!jq .<cr>
+
+
+" help fo-table
+set formatoptions+=lnjr
+
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%dw %de',
+    \   all_non_errors,
+    \   all_errors
+    \)
+endfunction
+
+set statusline=%f       "tail of the filename
+set statusline+=\ %{LinterStatus()}
+set statusline+=\ [%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=\ %y    "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
