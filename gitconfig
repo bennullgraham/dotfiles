@@ -20,9 +20,8 @@
     dvs = !git diff --staged | view -
     dw = diff --word-diff=color
     dws = diff --staged --word-diff=color
-    gr = log --abbrev-commit --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %s %C(blue)%an%Creset %Cgreen(%cr)%Creset' --graph --decorate
     la = !git config -l | grep alias
-    lg = log --abbrev-commit --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %s %C(blue)%an%Creset %Cgreen(%cr)%Creset' --graph --decorate
+    lg = "log --abbrev-commit --pretty=format:'%C(#999999)%h %C(blue)%<(16,trunc)%an%Creset%C(red)%d%Creset %s %Creset %C(#666666)(%cr)%Creset' --graph --decorate"
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     pru = !git pull --rebase && git submodule update --init
