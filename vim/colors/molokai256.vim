@@ -85,7 +85,7 @@ elseif has("gui_running") || (&t_Co == 256 && (&term ==# "xterm" || &term =~# "^
     CSAHi Ple7ffffffec303030N term=NONE cterm=NONE ctermbg=236 ctermfg=231 gui=NONE guibg=#303030 guifg=#ffffff
     CSAHi Plf79e9e9eec303030N term=NONE cterm=NONE ctermbg=236 ctermfg=247 gui=NONE guibg=#303030 guifg=#9e9e9e
     CSAHi Plec303030ec303030N term=NONE cterm=NONE ctermbg=236 ctermfg=236 gui=NONE guibg=#303030 guifg=#303030
-    CSAHi CursorLine term=underline cterm=NONE ctermbg=59 ctermfg=fg gui=NONE guibg=#293739 guifg=fg
+    CSAHi CursorLine term=underline cterm=NONE ctermbg=59 gui=NONE guibg=#293739
     CSAHi ColorColumn term=reverse cterm=NONE ctermbg=235 ctermfg=fg gui=NONE guibg=#232526 guifg=fg
     CSAHi Cursor term=NONE cterm=NONE ctermbg=231 ctermfg=16 gui=NONE guibg=#F8F8F0 guifg=#000000
     CSAHi lCursor term=NONE cterm=NONE ctermbg=231 ctermfg=234 gui=NONE guibg=fg guifg=bg
@@ -371,7 +371,7 @@ elseif has("gui_running") || (&t_Co == 256 && (&term ==# "xterm" || &term =~# "^
     CSAHi Ple7ffffffec303030N term=NONE cterm=NONE ctermbg=236 ctermfg=255 gui=NONE guibg=#303030 guifg=#ffffff
     CSAHi Plf79e9e9eec303030N term=NONE cterm=NONE ctermbg=236 ctermfg=247 gui=NONE guibg=#303030 guifg=#9e9e9e
     CSAHi Plec303030ec303030N term=NONE cterm=NONE ctermbg=236 ctermfg=236 gui=NONE guibg=#303030 guifg=#303030
-    CSAHi CursorLine term=underline cterm=NONE ctermbg=59 ctermfg=fg gui=NONE guibg=#293739 guifg=fg
+    CSAHi CursorLine term=underline cterm=NONE ctermbg=59 gui=NONE guibg=#293739
     CSAHi ColorColumn term=reverse cterm=NONE ctermbg=235 ctermfg=fg gui=NONE guibg=#232526 guifg=fg
     CSAHi Cursor term=NONE cterm=NONE ctermbg=255 ctermfg=16 gui=NONE guibg=#F8F8F0 guifg=#000000
     CSAHi lCursor term=NONE cterm=NONE ctermbg=255 ctermfg=234 gui=NONE guibg=fg guifg=bg
@@ -430,7 +430,7 @@ elseif has("gui_running") || (&t_Co == 256 && (&term ==# "xterm" || &term =~# "^
     CSAHi Pla0d70000e7ffffffN term=NONE cterm=NONE ctermbg=255 ctermfg=196 gui=NONE guibg=#ffffff guifg=#d70000
     CSAHi Boolean term=NONE cterm=NONE ctermbg=bg ctermfg=183 gui=NONE guibg=bg guifg=#AE81FF
     CSAHi Float term=NONE cterm=NONE ctermbg=bg ctermfg=183 gui=NONE guibg=bg guifg=#AE81FF
-    CSAHi Function term=NONE cterm=NONE ctermbg=bg ctermfg=191 gui=NONE guibg=bg guifg=#A6E22E
+    CSAHi Function term=NONE cterm=NONE ctermbg=bg ctermfg=191 gui=NONE guibg=bg guifg=#A6322E
     CSAHi Conditional term=NONE cterm=bold ctermbg=bg ctermfg=205 gui=bold guibg=bg guifg=#F92672
     CSAHi Repeat term=NONE cterm=bold ctermbg=bg ctermfg=205 gui=bold guibg=bg guifg=#F92672
     CSAHi Label term=NONE cterm=NONE ctermbg=bg ctermfg=229 gui=NONE guibg=bg guifg=#E6DB74
@@ -657,13 +657,12 @@ elseif has("gui_running") || &t_Co == 256
     CSAHi Ple7ffffffec303030N term=NONE cterm=NONE ctermbg=236 ctermfg=231 gui=NONE guibg=#303030 guifg=#ffffff
     CSAHi Plf79e9e9eec303030N term=NONE cterm=NONE ctermbg=236 ctermfg=247 gui=NONE guibg=#303030 guifg=#9e9e9e
     CSAHi Plec303030ec303030N term=NONE cterm=NONE ctermbg=236 ctermfg=236 gui=NONE guibg=#303030 guifg=#303030
-    CSAHi CursorLine term=underline cterm=NONE ctermbg=23 ctermfg=fg gui=NONE guibg=#293739 guifg=fg
+    CSAHi CursorLine term=underline cterm=NONE ctermbg=23 gui=NONE guibg=#293739
     CSAHi ColorColumn term=reverse cterm=NONE ctermbg=235 ctermfg=fg gui=NONE guibg=#232526 guifg=fg
     CSAHi Cursor term=NONE cterm=NONE ctermbg=231 ctermfg=16 gui=NONE guibg=#F8F8F0 guifg=#000000
     CSAHi lCursor term=NONE cterm=NONE ctermbg=231 ctermfg=234 gui=NONE guibg=fg guifg=bg
     CSAHi MatchParen term=reverse cterm=bold ctermbg=208 ctermfg=16 gui=bold guibg=#FD971F guifg=#000000
     CSAHi Error term=reverse cterm=NONE ctermbg=16 ctermfg=89 gui=NONE guibg=#1E0010 guifg=#960050
-    CSAHi Comment term=bold cterm=NONE ctermbg=bg ctermfg=102 gui=NONE guibg=bg guifg=#7E8E91
     CSAHi Constant term=underline cterm=bold ctermbg=bg ctermfg=141 gui=bold guibg=bg guifg=#AE81FF
     CSAHi Special term=bold cterm=NONE ctermbg=234 ctermfg=81 gui=italic guibg=bg guifg=#66D9EF
     CSAHi perlVarBlock2 term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg
@@ -688,12 +687,13 @@ elseif has("gui_running") || &t_Co == 256
     CSAHi Plf1626262e9121212N term=NONE cterm=NONE ctermbg=233 ctermfg=241 gui=NONE guibg=#121212 guifg=#626262
     CSAHi Identifier term=underline cterm=NONE ctermbg=bg ctermfg=208 gui=NONE guibg=bg guifg=#FD971F
     CSAHi Statement term=bold cterm=bold ctermbg=bg ctermfg=197 gui=bold guibg=bg guifg=#F92672
-    CSAHi PreProc term=underline cterm=NONE ctermbg=bg ctermfg=148 gui=NONE guibg=bg guifg=#A6E22E
+    CSAHi PreProc term=underline cterm=NONE ctermbg=bg ctermfg=148 gui=NONE guibg=bg guifg=#11CC66
     CSAHi Type term=underline cterm=NONE ctermbg=bg ctermfg=81 gui=NONE guibg=bg guifg=#66D9EF
     CSAHi Underlined term=underline cterm=underline ctermbg=bg ctermfg=244 gui=underline guibg=bg guifg=#808080
     CSAHi Ignore term=NONE cterm=NONE ctermbg=234 ctermfg=244 gui=NONE guibg=bg guifg=#808080
     CSAHi Todo term=NONE cterm=bold ctermbg=234 ctermfg=231 gui=bold guibg=bg guifg=#FFFFFF
-    CSAHi String term=NONE cterm=NONE ctermbg=bg ctermfg=186 gui=NONE guibg=bg guifg=#E6DB74
+    CSAHi Comment term=bold cterm=NONE ctermbg=bg ctermfg=102 gui=NONE guibg=bg guifg=#7E8E91
+    CSAHi String term=NONE cterm=NONE ctermbg=bg ctermfg=186 gui=NONE guibg=bg guifg=#9EDEF1
     CSAHi Character term=NONE cterm=NONE ctermbg=bg ctermfg=186 gui=NONE guibg=bg guifg=#E6DB74
     CSAHi Number term=NONE cterm=NONE ctermbg=bg ctermfg=141 gui=NONE guibg=bg guifg=#AE81FF
     CSAHi vimMenuBang term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg
@@ -716,13 +716,14 @@ elseif has("gui_running") || &t_Co == 256
     CSAHi Pla0d70000e7ffffffN term=NONE cterm=NONE ctermbg=231 ctermfg=160 gui=NONE guibg=#ffffff guifg=#d70000
     CSAHi Boolean term=NONE cterm=NONE ctermbg=bg ctermfg=141 gui=NONE guibg=bg guifg=#AE81FF
     CSAHi Float term=NONE cterm=NONE ctermbg=bg ctermfg=141 gui=NONE guibg=bg guifg=#AE81FF
-    CSAHi Function term=NONE cterm=NONE ctermbg=bg ctermfg=148 gui=NONE guibg=bg guifg=#A6E22E
+    CSAHi Function term=NONE cterm=bold ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=#FFFFFF
     CSAHi Conditional term=NONE cterm=bold ctermbg=bg ctermfg=197 gui=bold guibg=bg guifg=#F92672
     CSAHi Repeat term=NONE cterm=bold ctermbg=bg ctermfg=197 gui=bold guibg=bg guifg=#F92672
     CSAHi Label term=NONE cterm=NONE ctermbg=bg ctermfg=186 gui=NONE guibg=bg guifg=#E6DB74
     CSAHi Operator term=NONE cterm=NONE ctermbg=bg ctermfg=197 gui=NONE guibg=bg guifg=#F92672
+    CSAHi pythonInclude term=NONE cterm=NONE ctermbg=bg ctermfg=197 gui=NONE guibg=bg guifg=#09F692
     CSAHi Keyword term=NONE cterm=bold ctermbg=bg ctermfg=197 gui=bold guibg=bg guifg=#F92672
-    CSAHi Exception term=NONE cterm=bold ctermbg=bg ctermfg=148 gui=bold guibg=bg guifg=#A6E22E
+    CSAHi Exception term=NONE cterm=bold ctermbg=bg ctermfg=148 gui=bold guibg=bg guifg=#86F29E
     CSAHi vimHiKeyList term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg
     CSAHi vimHiBang term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg
     CSAHi vimHiCtermColor term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg
@@ -943,7 +944,7 @@ elseif has("gui_running") || &t_Co == 88
     CSAHi Ple7ffffffec303030N term=NONE cterm=NONE ctermbg=80 ctermfg=79 gui=NONE guibg=#303030 guifg=#ffffff
     CSAHi Plf79e9e9eec303030N term=NONE cterm=NONE ctermbg=80 ctermfg=84 gui=NONE guibg=#303030 guifg=#9e9e9e
     CSAHi Plec303030ec303030N term=NONE cterm=NONE ctermbg=80 ctermfg=80 gui=NONE guibg=#303030 guifg=#303030
-    CSAHi CursorLine term=underline cterm=NONE ctermbg=80 ctermfg=fg gui=NONE guibg=#293739 guifg=fg
+    CSAHi CursorLine term=underline cterm=NONE ctermbg=80 gui=NONE guibg=#293739
     CSAHi ColorColumn term=reverse cterm=NONE ctermbg=80 ctermfg=fg gui=NONE guibg=#232526 guifg=fg
     CSAHi Cursor term=NONE cterm=NONE ctermbg=79 ctermfg=16 gui=NONE guibg=#F8F8F0 guifg=#000000
     CSAHi lCursor term=NONE cterm=NONE ctermbg=79 ctermfg=80 gui=NONE guibg=fg guifg=bg
@@ -979,7 +980,7 @@ elseif has("gui_running") || &t_Co == 88
     CSAHi Underlined term=underline cterm=underline ctermbg=bg ctermfg=83 gui=underline guibg=bg guifg=#808080
     CSAHi Ignore term=NONE cterm=NONE ctermbg=80 ctermfg=83 gui=NONE guibg=bg guifg=#808080
     CSAHi Todo term=NONE cterm=bold ctermbg=80 ctermfg=79 gui=bold guibg=bg guifg=#FFFFFF
-    CSAHi String term=NONE cterm=NONE ctermbg=bg ctermfg=57 gui=NONE guibg=bg guifg=#E6DB74
+    CSAHi String term=NONE cterm=NONE ctermbg=bg ctermfg=057 gui=NONE guibg=bg guifg=#E6DB74
     CSAHi Character term=NONE cterm=NONE ctermbg=bg ctermfg=57 gui=NONE guibg=bg guifg=#E6DB74
     CSAHi Number term=NONE cterm=NONE ctermbg=bg ctermfg=55 gui=NONE guibg=bg guifg=#AE81FF
     CSAHi vimMenuBang term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg

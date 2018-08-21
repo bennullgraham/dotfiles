@@ -141,3 +141,30 @@ hi link rubyRailsARClassMethod        Statement
 " Diff
 hi link diffAdded           String
 hi link diffRemoved         Function
+
+" Python
+hi link pythonParameters           Identifier
+hi link pythonClassParameters      InheritUnderlined
+hi link pythonClass                Normal
+hi link pythonInclude              Include
+hi link pythonStatement            Structure
+hi link pythonConditional          Conditional
+hi link pythonException            Exception
+hi link pythonNumber               Number
+hi link pythonConstant             Constant
+hi link pythonFunction             Function
+hi link pythonRepeat               Repeat
+hi link pythonExtraOperator        Operator
+hi link pythonExtraPseudoOperator  Operator
+hi link pythonDecorator            Define
+hi link pythonParam                Normal
+hi link pythonBrackets             Normal
+hi link pythonBuiltin              Builtin
+hi link pythonString               String
+hi link pythonTodo                 Todo
+hi link pythonComment              Comment
+hi link pythonEscape               Special
+hi link pythonDoctest              Special
+hi link pythonRawString            String
+hi link pythonExceptions           Structure
+hi link pythonDoctestValue         Define
