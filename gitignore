@@ -1,9 +1,11 @@
+*.ipynb
 *.sublime-project
 *.sublime-workspace
 .*.swp
-/tags
-/celerybeat-schedule
-/.noseids
-*.ipynb
 .ipynb_checkpoints
+/.noseids
+/celerybeat-schedule
+/qcheck.py
+/tags
+/.queries
 whoosh_index
