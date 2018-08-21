@@ -5,9 +5,8 @@ alias l='ll'  # efficiency!
 alias grep='grep --color=auto'
 alias g='git'
 
-# https://bugs.launchpad.net/ubuntu/+source/rxvt-unicode/+bug/772924
-alias ssh='TERM=xterm-256color ssh'
-
 alias ipy='ipython'
 
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
+
+alias sis='stacklib instance ssh'
