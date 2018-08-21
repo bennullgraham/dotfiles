@@ -46,7 +46,7 @@ LOCAL_CONFIG="$HOME/.zsh/local"
 [[ -f $LOCAL_CONFIG ]] && source $LOCAL_CONFIG
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-brewer.dark.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-seti.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # ^s is bound to "force user to google 'unsuspend terminal'"; unbind because
@@ -54,3 +54,5 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-brewer.dark.sh"
 stty stop undef
 
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
+export PATH=$PATH:~/.local/bin
