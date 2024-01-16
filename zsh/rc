@@ -15,6 +15,10 @@ EDITOR=vim
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
+# Pip puts scripts in .local/bin and I put scripts in ~/bin. Make fzf findable
+# too.
+export PATH=$PATH:~/.local/bin:~/bin:~/.fzf/bin
+
 # initialise fasd if it's around
 if command -v fasd &>/dev/null; then
     eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-wcomp zsh-ccomp-install zsh-wcomp-install)"
@@ -23,6 +27,7 @@ fi
 # virtualenv
 source /usr/local/bin/virtualenvwrapper_lazy.sh
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
 # use 'cdp' as shortcut for cding with fasd
 function cdp() {
@@ -35,7 +40,7 @@ function cdp() {
 }
 
 # restore ssh agent
-export SSH_AUTH_SOCK="$(find /tmp/ssh-* -name agent.\* -uid $(id -u) | head -n 1)"
+# export SSH_AUTH_SOCK="$(find /tmp ! -readable -prune -path ./ssh-\*agent.\* -uid $(id -u) | head -n 1)"
 
 source ~/.zsh/aliases
 source ~/.zsh/prompt
@@ -53,6 +58,15 @@ BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-seti.sh"
 # that is stupid.
 stty stop undef
 
+# avoid huge blast radius when alt-backspacing
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
-export PATH=$PATH:~/.local/bin
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fast node manager
+eval "`fnm env --multi`"
+
+export DFT_DISPLAY=side-by-side-show-both
+export DFT_SYNTAX_HIGHLIGHT=off
+export DFT_TAB_WIDTH=4

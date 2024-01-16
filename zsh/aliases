@@ -4,9 +4,7 @@ alias ll='ls -lah'
 alias l='ll'  # efficiency!
 alias grep='grep --color=auto'
 alias g='git'
-
 alias ipy='ipython'
-
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
-
 alias sis='stacklib instance ssh'
+alias pr='gh pr checkout $(gh pr list | column -t -s"	" | fzf | cut -f1 -d" ")'

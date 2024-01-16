@@ -8,4 +8,5 @@
 /qcheck.py
 /tags
 /.queries
+/env
 whoosh_index

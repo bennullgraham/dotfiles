@@ -1,6 +1,10 @@
 set nocompatible
 set shell=/bin/sh
 
+" Tabbing
+filetype indent on
+set expandtab
+
 " Theme
 let python_highlight_indent_errors = 1
 let python_highlight_space_errors = 1
@@ -9,10 +13,13 @@ let python_hihghlight_file_headers_as_comments = 1
 set t_ut=
 set background=dark
 set termguicolors
-set term=screen-256color
+set term=xterm-256color
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-colorscheme molokai256
+let g:hybrid_use_Xresources=1
+" colorscheme hybrid
+" colorscheme flattown
+colorscheme ir_black
 syntax enable
 
 " backspace, destroyer of worlds
@@ -33,10 +40,6 @@ set nowrap
 set ttyfast
 set synmaxcol=256
 syntax sync minlines=1024
-
-" Tabbing
-filetype indent on
-set expandtab
 
 "" Keep swap and backup files in a central place. The trailing double slash
 "" enables a no-collision file naming scheme.
@@ -119,6 +122,9 @@ nmap <Leader>p :Files<cr>
 nmap <Leader>g :Ag<cr>
 nmap <Leader>o :<C-u>Unite -no-split -buffer-name=unite outline<cr>
 nmap <Leader>t :Tags<cr>
+nmap <Leader>rn :TestNearest<cr>
+nmap <Leader>rf :TestFile<cr>
+nmap <Leader>rv :TestVisit<cr>
 
 
 " toggle hlsearch
@@ -171,8 +177,8 @@ nmap <leader>ds :DiffSaved<cr>
 
 
 " snippets... sorta
-nmap <leader>si oimport ipdb; ipdb.set_trace()<esc>
-nmap <leader>Si Oimport ipdb; ipdb.set_trace()<esc>
+nmap <leader>si o__import__('ipdb').set_trace()<esc>
+nmap <leader>Si O__import__('ipdb').set_trace()<esc>
 
 " remap ex-mode to execute macro in q
 nmap Q @q
@@ -198,8 +204,14 @@ nnoremap J mzJ`zmz
 " /s global replace by default, now /g toggles back to single.
 set gdefault
 
-let g:ale_fixers = {'python': ['isort']}
+let g:ale_linters = {'python': ['pylint', 'pyls']}
+" let g:ale_fixers = {'python': ['isort', 'black']}
+let g:ale_fixers = {'python': ['black']}
 let g:ale_fix_on_save = 1
+let g:ale_lint_on_text_changed = 'insert'
+let g:ale_completion_enabled = 1
+let g:ale_completion_delay = 300
+let g:ale_completion_max_suggestions = 5
 
 
 " Highlight the current line, only for the active window
@@ -256,3 +268,23 @@ set statusline+=\ %y    "filetype
 set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
+
+let test#python#djangotest#executable = 'nox -s core --'
+let test#strategy = "tslime"
+" let tslime#session = "dev-r"
+" let tslime#window = "api-test"
+" let tslime#pane = "1"
+let tslime = {
+    \ 'session': 'dev-r',
+    \ 'window': 'api-test',
+    \ 'pane': '0',
+    \}
+
+" Put these lines at the very end of your vimrc file.
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL

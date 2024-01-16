@@ -30,7 +30,9 @@
     s = status
     st = status
     sub = submodule
+    su = submodule update
     tc = !git log --oneline | egrep -o '\\[[a-z]+\\]' | sort | uniq -c | sort -n --reverse
+    sw = !git checkout "$(git branch -a | fzf)"
 
 [core]
     excludesfile = ~/.gitignore
@@ -42,3 +44,5 @@
 [user]
     name = Ben Graham
     email = bgraham@bgraham.com.au
+[diff]
+	external = difft

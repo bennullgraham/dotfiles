@@ -10,7 +10,7 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr "%F{214}" # no printable chars; just change the colour of subsequent chars
 zstyle ':vcs_info:*' unstagedstr "%F{214}"
-zstyle ':vcs_info:*' formats "%F{73}%b %F{230}%u%c"
+zstyle ':vcs_info:*' formats "%F{038}%b %F{230}%u%c"
 
 venv_info () {
     if [ -e "$VIRTUAL_ENV" ]; then
@@ -23,9 +23,8 @@ precmd () {
     vcs_info
 }
 
-_host="%F{036}%m%f "
+_host="%B%F{038}%m%b "
 _vcs='${vcs_info_msg_0_}'
-# _water="≋%f"
 _water="»%f"
 _cwd="%F{242}%~%f"
 _time="%F{250}%T%f"
